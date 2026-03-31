@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://duwphgml3g2f0"]
+
+[ext_resource type="Script" uid="uid://t8vlx0jt4dpt" path="res://scenes/GAME_Plonko/peg.gd" id="1_pkhfl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ywbwp"]
+
+[node name="Peg" type="Node2D"]
+position = Vector2(221, 0)
+
+[node name="Peg" type="StaticBody2D" parent="."]
+script = ExtResource("1_pkhfl")
+
+[node name="ColorRect" type="ColorRect" parent="Peg"]
+offset_left = 445.0
+offset_top = 354.0
+offset_right = 460.0
+offset_bottom = 368.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Peg"]
+position = Vector2(453, 361)
+shape = SubResource("CircleShape2D_ywbwp")
+debug_color = Color(0.81582457, 0.35426295, 0.53031933, 0.41960785)

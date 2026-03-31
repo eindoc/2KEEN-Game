@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=3 uid="uid://yjod48nfsb6j"]
+
+[ext_resource type="Script" uid="uid://cvweo7ar2bbno" path="res://scenes/GAME_Plonko/plonko.gd" id="1_1u2b4"]
+[ext_resource type="Script" uid="uid://wjyvtfphskk7" path="res://scenes/GAME_Plonko/ball.gd" id="1_ubr4u"]
+[ext_resource type="PackedScene" uid="uid://duwphgml3g2f0" path="res://scenes/GAME_Plonko/peg.tscn" id="2_odifc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ubr4u"]
+friction = 0.3
+bounce = 0.7
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1gq7q"]
+radius = 20.09975
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2befn"]
+size = Vector2(9.459709, 22.092213)
+
+[node name="Plonko" type="Node2D"]
+script = ExtResource("1_1u2b4")
+
+[node name="Ball" type="RigidBody2D" parent="."]
+position = Vector2(620, 64)
+physics_material_override = SubResource("PhysicsMaterial_ubr4u")
+linear_damp = 1.0
+script = ExtResource("1_ubr4u")
+
+[node name="ColorRect" type="ColorRect" parent="Ball"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+position = Vector2(20, 20)
+shape = SubResource("CircleShape2D_1gq7q")
+
+[node name="Boundaries" type="Node" parent="."]
+
+[node name="L Wall" type="StaticBody2D" parent="Boundaries"]
+scale = Vector2(1, 18.039999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/L Wall"]
+position = Vector2(20, 20)
+scale = Vector2(4.22846, 1.720063)
+shape = SubResource("RectangleShape2D_2befn")
+
+[node name="ColorRect" type="ColorRect" parent="Boundaries/L Wall"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
+[node name="R Wall" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(1237, 0)
+scale = Vector2(1, 18.039999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/R Wall"]
+position = Vector2(20, 20)
+scale = Vector2(4.22846, 1.720063)
+shape = SubResource("RectangleShape2D_2befn")
+
+[node name="ColorRect" type="ColorRect" parent="Boundaries/R Wall"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
+[node name="Ceiling" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(3.5527137e-14, 40)
+rotation = -1.5707964
+scale = Vector2(1, 31.84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Ceiling"]
+position = Vector2(20, 20)
+scale = Vector2(4.22846, 1.720063)
+shape = SubResource("RectangleShape2D_2befn")
+
+[node name="ColorRect" type="ColorRect" parent="Boundaries/Ceiling"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
+[node name="Floor" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(6.412648e-13, 722)
+rotation = -1.5707964
+scale = Vector2(1, 31.84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Floor"]
+position = Vector2(20, 20)
+scale = Vector2(4.22846, 1.720063)
+shape = SubResource("RectangleShape2D_2befn")
+
+[node name="ColorRect" type="ColorRect" parent="Boundaries/Floor"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
+[node name="Peg" parent="." instance=ExtResource("2_odifc")]
+position = Vector2(179, 0)

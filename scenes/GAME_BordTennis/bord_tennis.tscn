@@ -1,0 +1,462 @@
+[gd_scene load_steps=30 format=3 uid="uid://b55ajssothcnd"]
+
+[ext_resource type="Script" uid="uid://qnywrq4g6u0x" path="res://scenes/GAME_BordTennis/bord_tennis.gd" id="1_byv5v"]
+[ext_resource type="Script" uid="uid://1y274dalxcrj" path="res://scenes/GAME_BordTennis/main.gd" id="2_t2iqu"]
+[ext_resource type="Script" uid="uid://cf4ptyxthy71a" path="res://scenes/GAME_BordTennis/player.gd" id="3_s0moa"]
+[ext_resource type="Script" uid="uid://te8je82adybj" path="res://scenes/GAME_BordTennis/ball.gd" id="4_iv7is"]
+[ext_resource type="Script" uid="uid://bt0y4smavhwt0" path="res://scenes/GAME_BordTennis/ballsXtra.gd" id="4_wtrd1"]
+[ext_resource type="Texture2D" uid="uid://rdxwwwq27jvv" path="res://img/bord_paddle_sheet.png" id="4_x01qr"]
+[ext_resource type="Script" uid="uid://bgmynhgap867l" path="res://scenes/GAME_BordTennis/borders.gd" id="5_8lv80"]
+[ext_resource type="AudioStream" uid="uid://dtpwc8hogt7b8" path="res://scenes/GAME_BordTennis/Text 1.wav" id="5_wtrd1"]
+[ext_resource type="Script" uid="uid://bx3604wd1giwc" path="res://scenes/GAME_BordTennis/hud.gd" id="6_byv5v"]
+[ext_resource type="Texture2D" uid="uid://cy2dldfxa0ov7" path="res://img/bord_ball_sheet.png" id="6_r52op"]
+[ext_resource type="FontFile" uid="uid://dtrm8nropfmb2" path="res://scenes/GAME_BordTennis/HomeVideo.ttf" id="7_byv5v"]
+[ext_resource type="FontFile" uid="uid://pady3731duo6" path="res://fonts/GlowtonePersonalUseRegular-6R14D.otf" id="9_wtrd1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r52op"]
+atlas = ExtResource("4_x01qr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1gu1"]
+atlas = ExtResource("4_x01qr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqgkg"]
+atlas = ExtResource("4_x01qr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nginu"]
+atlas = ExtResource("4_x01qr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4hnl"]
+atlas = ExtResource("4_x01qr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fkief"]
+animations = [{
+"frames": [{
+"duration": 0.25,
+"texture": SubResource("AtlasTexture_r52op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1gu1")
+}],
+"loop": false,
+"name": &"bounce",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqgkg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nginu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4hnl")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkief"]
+atlas = ExtResource("6_r52op")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cekup"]
+atlas = ExtResource("6_r52op")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j1gu1"]
+animations = [{
+"frames": [{
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_fkief")
+}],
+"loop": false,
+"name": &"bounce",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_cekup")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2iqu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_byv5v"]
+size = Vector2(14.9525, 60.714027)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv7is"]
+
+[sub_resource type="GDScript" id="GDScript_wtrd1"]
+script/source = "extends Label
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+	
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="Gradient" id="Gradient_r52op"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gqgkg"]
+gradient = SubResource("Gradient_r52op")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hhbj"]
+size = Vector2(100, 360)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6hhbj"]
+radius = 40.0
+
+[node name="BordTennis" type="Node2D"]
+script = ExtResource("1_byv5v")
+
+[node name="Main" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(640, 360)
+scale = Vector2(1.8000023, 0.55999875)
+script = ExtResource("2_t2iqu")
+
+[node name="Player" type="CharacterBody2D" parent="Main" groups=["player"]]
+position = Vector2(-180.55531, -1510.7177)
+scale = Vector2(0.49570695, 1.985204)
+script = ExtResource("3_s0moa")
+
+[node name="Paddlebounce" type="AnimatedSprite2D" parent="Main/Player"]
+unique_name_in_owner = true
+position = Vector2(359.19476, 1001.3374)
+scale = Vector2(5.008273, 4.115192)
+sprite_frames = SubResource("SpriteFrames_fkief")
+animation = &"bounce"
+
+[node name="ColorRect" type="ColorRect" parent="Main/Player"]
+visible = false
+offset_left = 272.0
+offset_top = 987.0
+offset_right = 312.0
+offset_bottom = 1027.0
+scale = Vector2(4.39745, 0.658762)
+color = Color(0.06489055, 0.96850663, 1.1658621, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Main/Player"]
+position = Vector2(359.75513, 1012.85254)
+scale = Vector2(5, 4.0587287)
+polygon = PackedVector2Array(13.897079, 2.4378662, 16, -6, -16, -6, -13.897079, 2.4378662, -0.6724396, 7.5352325)
+
+[node name="Ball" type="CharacterBody2D" parent="Main"]
+light_mask = 129
+visibility_layer = 129
+z_index = 1
+position = Vector2(-342, -474)
+scale = Vector2(0.4, 1)
+collision_layer = 131
+collision_mask = 131
+up_direction = Vector2(0.57729197, -0.81653786)
+script = ExtResource("4_iv7is")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Main/Ball"]
+position = Vector2(342.83395, 540.0358)
+scale = Vector2(0.9340267, 1.1138422)
+sprite_frames = SubResource("SpriteFrames_j1gu1")
+animation = &"idle"
+speed_scale = 0.5
+
+[node name="ColorRect" type="ColorRect" parent="Main/Ball"]
+visible = false
+offset_left = 328.0
+offset_top = 528.0
+offset_right = 368.0
+offset_bottom = 568.0
+scale = Vector2(0.728545, 0.72)
+color = Color(0.94667506, 0.21586372, 0.22606032, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Main/Ball"]
+light_mask = 129
+visibility_layer = 129
+position = Vector2(343, 540.0716)
+scale = Vector2(3.73231, 4.464302)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="BallHit" type="AudioStreamPlayer2D" parent="Main/Ball"]
+stream = ExtResource("5_wtrd1")
+
+[node name="BallsXtra" type="CharacterBody2D" parent="Main"]
+z_index = 1
+position = Vector2(-258.88855, -471.4296)
+scale = Vector2(0.3, 1)
+collision_layer = 3
+collision_mask = 3
+up_direction = Vector2(0.57729197, -0.81653786)
+script = ExtResource("4_wtrd1")
+
+[node name="ColorRect" type="ColorRect" parent="Main/BallsXtra"]
+offset_left = 858.8856
+offset_top = 798.2223
+offset_right = 898.8856
+offset_bottom = 838.2223
+scale = Vector2(0.728545, 0.72)
+color = Color(0.927586, 0.88756245, 0.60076624, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Main/BallsXtra"]
+light_mask = 129
+visibility_layer = 129
+position = Vector2(873.8856, 813.2223)
+scale = Vector2(3.73231, 3.73981)
+polygon = PackedVector2Array(-4, -4, -4, 4, 4, 4, 4, -4)
+
+[node name="BallHit" type="AudioStreamPlayer2D" parent="Main/BallsXtra"]
+stream = ExtResource("5_wtrd1")
+pitch_scale = 1.2
+
+[node name="screencheck" type="VisibleOnScreenNotifier2D" parent="Main/BallsXtra"]
+position = Vector2(862.9618, 471.4297)
+scale = Vector2(291.7778, 97.571434)
+rect = Rect2(-3.9603903, -6.6250153, 8.085797, 12.982172)
+
+[node name="Borders" type="StaticBody2D" parent="Main"]
+light_mask = 3
+visibility_layer = 3
+script = ExtResource("5_8lv80")
+
+[node name="Left" type="CollisionShape2D" parent="Main/Borders"]
+position = Vector2(-355, 0)
+scale = Vector2(0.546415, 68.5338)
+shape = SubResource("RectangleShape2D_t2iqu")
+
+[node name="ColorRect" type="ColorRect" parent="Main/Borders/Left"]
+offset_left = -9.1505
+offset_top = -10.1264
+offset_right = 30.8495
+offset_bottom = 29.8736
+scale = Vector2(0.486498, 0.486419)
+metadata/_edit_use_anchors_ = true
+
+[node name="Right" type="CollisionShape2D" parent="Main/Borders"]
+position = Vector2(355, 0)
+scale = Vector2(0.546415, 68.5338)
+shape = SubResource("RectangleShape2D_t2iqu")
+debug_color = Color(0, 0.631373, 0.466667, 0.737255)
+
+[node name="ColorRect" type="ColorRect" parent="Main/Borders/Right"]
+offset_left = -9.1505
+offset_top = -10.1264
+offset_right = 30.8495
+offset_bottom = 29.8736
+scale = Vector2(0.486498, 0.486419)
+metadata/_edit_use_anchors_ = true
+
+[node name="Top" type="CollisionShape2D" parent="Main/Borders"]
+position = Vector2(-3, -635)
+rotation = 1.5708
+scale = Vector2(1.3464115, 38.6538)
+shape = SubResource("RectangleShape2D_t2iqu")
+
+[node name="ColorRect" type="ColorRect" parent="Main/Borders/Top"]
+offset_left = -9.1505
+offset_top = -10.1264
+offset_right = 30.8495
+offset_bottom = 29.8736
+scale = Vector2(0.486498, 0.486419)
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerBumperRight" type="CollisionShape2D" parent="Main/Borders"]
+position = Vector2(363.00003, 453.97168)
+scale = Vector2(1.94711, 5.20566)
+shape = SubResource("RectangleShape2D_byv5v")
+
+[node name="PlayerBumperLeft" type="CollisionShape2D" parent="Main/Borders"]
+position = Vector2(-363, 446.00003)
+scale = Vector2(1.94711, 5.20566)
+shape = SubResource("RectangleShape2D_byv5v")
+
+[node name="Deathzone" type="Area2D" parent="Main"]
+position = Vector2(1.1111096, 5.357132)
+scale = Vector2(1, 1.1428574)
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main/Deathzone"]
+position = Vector2(0, 523)
+scale = Vector2(33.64, 1)
+shape = SubResource("RectangleShape2D_iv7is")
+
+[node name="Walls" type="Area2D" parent="Main"]
+position = Vector2(-354, 0)
+scale = Vector2(0.546415, 68.5338)
+
+[node name="LeftWall" type="StaticBody2D" parent="Main/Walls" groups=["left_wall"]]
+
+[node name="LeftWallCol" type="CollisionShape2D" parent="Main/Walls/LeftWall"]
+position = Vector2(-10.9807, 0)
+scale = Vector2(0.546415, 68.5338)
+shape = SubResource("RectangleShape2D_t2iqu")
+
+[node name="ColorRect" type="ColorRect" parent="Main/Walls/LeftWall/LeftWallCol"]
+offset_left = -9.1505
+offset_top = -10.1264
+offset_right = 30.8495
+offset_bottom = 29.8736
+scale = Vector2(0.486498, 0.486419)
+metadata/_edit_use_anchors_ = true
+
+[node name="RightWall" type="StaticBody2D" parent="Main/Walls" groups=["left_wall", "right_wall"]]
+
+[node name="RightWallCol" type="CollisionShape2D" parent="Main/Walls/RightWall"]
+position = Vector2(1306.7, 0)
+scale = Vector2(0.546415, 68.5338)
+shape = SubResource("RectangleShape2D_t2iqu")
+debug_color = Color(0, 0.631373, 0.466667, 0.737255)
+
+[node name="ColorRect" type="ColorRect" parent="Main/Walls/RightWall/RightWallCol"]
+offset_left = -9.1505
+offset_top = -10.1264
+offset_right = 30.8495
+offset_bottom = 29.8736
+scale = Vector2(0.486498, 0.486419)
+metadata/_edit_use_anchors_ = true
+
+[node name="TopWall" type="StaticBody2D" parent="Main/Walls"]
+
+[node name="TopWallCol" type="CollisionShape2D" parent="Main/Walls/TopWall"]
+position = Vector2(647.85925, -9.901289)
+rotation = 1.5708
+scale = Vector2(0.0339839, 42.6124)
+shape = SubResource("RectangleShape2D_t2iqu")
+
+[node name="ColorRect" type="ColorRect" parent="Main/Walls/TopWall/TopWallCol"]
+offset_left = -9.1505
+offset_top = -10.1264
+offset_right = 30.8495
+offset_bottom = 29.8736
+scale = Vector2(0.486498, 0.486419)
+metadata/_edit_use_anchors_ = true
+
+[node name="Hud" type="CanvasLayer" parent="Main"]
+script = ExtResource("6_byv5v")
+
+[node name="Score" type="Label" parent="Main/Hud"]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_top = 21.0
+offset_right = 1.0
+offset_bottom = 86.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 0.627451)
+theme_override_fonts/font = ExtResource("7_byv5v")
+theme_override_font_sizes/font_size = 71
+text = "0"
+script = SubResource("GDScript_wtrd1")
+
+[node name="HighScore" type="Label" parent="Main/Hud"]
+unique_name_in_owner = true
+z_index = -8
+z_as_relative = false
+offset_left = 23.0
+offset_top = 26.0
+offset_right = 195.0
+offset_bottom = 163.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.43137255)
+theme_override_fonts/font = ExtResource("9_wtrd1")
+theme_override_font_sizes/font_size = 60
+
+[node name="background" type="ColorRect" parent="Main"]
+z_index = -200
+offset_left = -388.88837
+offset_top = -764.2874
+offset_right = 397.11066
+offset_bottom = 644.0285
+color = Color(0.27911195, 0.26616436, 0.26357484, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Main/background"]
+layout_mode = 0
+offset_left = 51.11101
+offset_top = 310.715
+offset_right = 726.66565
+offset_bottom = 408.9295
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Main/background"]
+modulate = Color(1, 1, 1, 0.4627451)
+position = Vector2(393.88837, 753.26917)
+rotation = 1.5707964
+scale = Vector2(19.34012, 10.995945)
+texture = SubResource("GradientTexture2D_gqgkg")
+flip_h = true
+
+[node name="BrickTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="LeftTouch" type="TouchScreenButton" parent="."]
+position = Vector2(130, 416)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_6hhbj")
+action = "Left"
+
+[node name="L" type="Label" parent="LeftTouch"]
+offset_left = -37.0
+offset_top = 106.0
+offset_right = 9.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.39215687)
+theme_override_font_sizes/font_size = 32
+text = "<"
+metadata/_edit_use_anchors_ = true
+
+[node name="RightTouch" type="TouchScreenButton" parent="."]
+position = Vector2(1150, 416)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_6hhbj")
+action = "Right"
+
+[node name="R" type="Label" parent="RightTouch"]
+offset_left = 21.5
+offset_top = 106.0
+offset_right = 67.5
+offset_bottom = 219.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.39215687)
+theme_override_font_sizes/font_size = 32
+text = ">"
+metadata/_edit_use_anchors_ = true
+
+[node name="EnterExitTouch" type="TouchScreenButton" parent="."]
+position = Vector2(617, 53)
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_6hhbj")
+action = "ui_cancel"
+
+[connection signal="animation_finished" from="Main/Player/Paddlebounce" to="Main/Ball" method="_on_paddlebounce_animation_finished"]
+[connection signal="animation_finished" from="Main/Ball/AnimatedSprite2D" to="Main/Ball" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="screen_entered" from="Main/BallsXtra/screencheck" to="Main/BallsXtra" method="_on_screencheck_screen_entered"]
+[connection signal="screen_exited" from="Main/BallsXtra/screencheck" to="Main" method="_on_screencheck_screen_exited"]
+[connection signal="screen_exited" from="Main/BallsXtra/screencheck" to="Main/BallsXtra" method="_on_screencheck_screen_exited"]
+[connection signal="screen_exited" from="Main/BallsXtra/screencheck" to="Main/BallsXtra" method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_entered" from="Main/Deathzone" to="." method="_on_deathzone_body_entered"]
+[connection signal="body_entered" from="Main/Deathzone" to="Main/Ball" method="_on_deathzone_body_entered"]
+[connection signal="body_entered" from="Main/Walls" to="Main/Ball" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="BrickTimer" to="." method="_on_brick_timer_timeout"]
