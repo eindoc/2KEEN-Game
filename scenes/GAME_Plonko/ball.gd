@@ -18,3 +18,7 @@ func _on_body_entered(body):
 	print("hit: ", body.name)
 	if body.has_method("get_hit"):
 		body.get_hit()
+
+func _input(event):
+	if event is InputEventKey and event.keycode == KEY_SPACE and event.pressed:
+		linear_velocity = Vector2(-1000, 50)

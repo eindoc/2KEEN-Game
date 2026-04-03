@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://yjod48nfsb6j"]
+[gd_scene load_steps=10 format=3 uid="uid://yjod48nfsb6j"]
 
 [ext_resource type="Script" uid="uid://cvweo7ar2bbno" path="res://scenes/GAME_Plonko/plonko.gd" id="1_1u2b4"]
 [ext_resource type="Script" uid="uid://wjyvtfphskk7" path="res://scenes/GAME_Plonko/ball.gd" id="1_ubr4u"]
 [ext_resource type="PackedScene" uid="uid://duwphgml3g2f0" path="res://scenes/GAME_Plonko/peg.tscn" id="2_odifc"]
 [ext_resource type="Script" uid="uid://gn2t20534rko" path="res://scenes/GAME_Plonko/peg_spawner.gd" id="4_odifc"]
 [ext_resource type="Script" uid="uid://bsc5v7xugljg4" path="res://scenes/GAME_Plonko/peg_layout_editor.gd" id="5_k1ptq"]
+[ext_resource type="Script" uid="uid://d4fmyhukvpv3f" path="res://scenes/GAME_Plonko/scoring.gd" id="6_puo58"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ubr4u"]
 friction = 0.1
@@ -20,7 +21,7 @@ size = Vector2(9.459709, 22.092213)
 script = ExtResource("1_1u2b4")
 
 [node name="Ball" type="RigidBody2D" parent="."]
-position = Vector2(620, 64)
+position = Vector2(1286, 77)
 physics_material_override = SubResource("PhysicsMaterial_ubr4u")
 linear_damp = 1.0
 script = ExtResource("1_ubr4u")
@@ -28,6 +29,7 @@ script = ExtResource("1_ubr4u")
 [node name="ColorRect" type="ColorRect" parent="Ball"]
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
 position = Vector2(20, 20)
@@ -53,8 +55,8 @@ offset_bottom = 40.0
 color = Color(0, 1, 1, 1)
 
 [node name="R Wall" type="StaticBody2D" parent="Boundaries"]
-position = Vector2(1237, 0)
-scale = Vector2(1, 44.6)
+position = Vector2(1237, 136)
+scale = Vector2(1, 45.079998)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/R Wall"]
 position = Vector2(20, 20)
@@ -103,5 +105,33 @@ peg_scene = ExtResource("2_odifc")
 
 [node name="PegLayoutEditor" type="Node2D" parent="."]
 script = ExtResource("5_k1ptq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Score" type="Label" parent="CanvasLayer"]
+offset_right = 158.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 42
+text = "Score: 0"
+script = ExtResource("6_puo58")
+metadata/_edit_use_anchors_ = true
+
+[node name="platform" type="StaticBody2D" parent="."]
+position = Vector2(1237.0001, 136)
+rotation = -1.5707964
+scale = Vector2(0.11999631, 3.960001)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
+position = Vector2(20, 20)
+scale = Vector2(4.22846, 1.720063)
+shape = SubResource("RectangleShape2D_2befn")
+
+[node name="ColorRect" type="ColorRect" parent="platform"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
 
 [connection signal="body_entered" from="Ball" to="Ball" method="_on_body_entered"]
