@@ -1,43 +1,159 @@
-[gd_scene load_steps=10 format=3 uid="uid://yjod48nfsb6j"]
+[gd_scene load_steps=29 format=3 uid="uid://yjod48nfsb6j"]
 
 [ext_resource type="Script" uid="uid://cvweo7ar2bbno" path="res://scenes/GAME_Plonko/plonko.gd" id="1_1u2b4"]
-[ext_resource type="Script" uid="uid://wjyvtfphskk7" path="res://scenes/GAME_Plonko/ball.gd" id="1_ubr4u"]
-[ext_resource type="PackedScene" uid="uid://duwphgml3g2f0" path="res://scenes/GAME_Plonko/peg.tscn" id="2_odifc"]
-[ext_resource type="Script" uid="uid://gn2t20534rko" path="res://scenes/GAME_Plonko/peg_spawner.gd" id="4_odifc"]
-[ext_resource type="Script" uid="uid://bsc5v7xugljg4" path="res://scenes/GAME_Plonko/peg_layout_editor.gd" id="5_k1ptq"]
+[ext_resource type="PackedScene" uid="uid://cpg448eint45r" path="res://scenes/GAME_Plonko/ball.tscn" id="2_puo58"]
+[ext_resource type="PackedScene" uid="uid://d2exmnssn0tne" path="res://scenes/GAME_Plonko/levels/level_1.tscn" id="2_pv2gc"]
+[ext_resource type="AudioStream" uid="uid://daoe6psl6sfft" path="res://sound/Dim Sum Paradise-trim.mp3" id="5_k1ptq"]
 [ext_resource type="Script" uid="uid://d4fmyhukvpv3f" path="res://scenes/GAME_Plonko/scoring.gd" id="6_puo58"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ubr4u"]
-friction = 0.1
-bounce = 0.87
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_1gq7q"]
-radius = 20.09975
+[ext_resource type="Texture2D" uid="uid://cqsm20ago8d7n" path="res://danceman.png" id="6_pv2gc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2befn"]
 size = Vector2(9.459709, 22.092213)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsn0b"]
+atlas = ExtResource("6_pv2gc")
+region = Rect2(0, 0, 220, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05uoy"]
+atlas = ExtResource("6_pv2gc")
+region = Rect2(220, 0, 220, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amsuh"]
+atlas = ExtResource("6_pv2gc")
+region = Rect2(440, 0, 220, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr5fb"]
+atlas = ExtResource("6_pv2gc")
+region = Rect2(660, 0, 220, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygoa3"]
+atlas = ExtResource("6_pv2gc")
+region = Rect2(880, 0, 220, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deosh"]
+atlas = ExtResource("6_pv2gc")
+region = Rect2(1100, 0, 220, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5b3d"]
+atlas = ExtResource("6_pv2gc")
+region = Rect2(1320, 0, 220, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxbqk"]
+atlas = ExtResource("6_pv2gc")
+region = Rect2(1540, 0, 220, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sleqe"]
+atlas = ExtResource("6_pv2gc")
+region = Rect2(1760, 0, 220, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ek47c"]
+atlas = ExtResource("6_pv2gc")
+region = Rect2(1980, 0, 220, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2snt"]
+atlas = ExtResource("6_pv2gc")
+region = Rect2(2200, 0, 220, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkvn5"]
+atlas = ExtResource("6_pv2gc")
+region = Rect2(2420, 0, 220, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1l2ia"]
+atlas = ExtResource("6_pv2gc")
+region = Rect2(2640, 0, 220, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rm5my"]
+atlas = ExtResource("6_pv2gc")
+region = Rect2(2860, 0, 220, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkk4d"]
+atlas = ExtResource("6_pv2gc")
+region = Rect2(3080, 0, 220, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs0h2"]
+atlas = ExtResource("6_pv2gc")
+region = Rect2(3300, 0, 220, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uybei"]
+atlas = ExtResource("6_pv2gc")
+region = Rect2(3520, 0, 220, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhdid"]
+atlas = ExtResource("6_pv2gc")
+region = Rect2(3740, 0, 220, 396)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k1ptq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsn0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05uoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amsuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr5fb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygoa3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deosh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5b3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxbqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sleqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek47c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2snt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkvn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1l2ia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rm5my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkk4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs0h2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uybei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhdid")
+}],
+"loop": true,
+"name": &"default",
+"speed": 13.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_puo58"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pv2gc"]
+gradient = SubResource("Gradient_puo58")
+fill_from = Vector2(0.72894734, 0.8815789)
+
 [node name="Plonko" type="Node2D"]
 script = ExtResource("1_1u2b4")
-
-[node name="Ball" type="RigidBody2D" parent="."]
-position = Vector2(1286, 77)
-physics_material_override = SubResource("PhysicsMaterial_ubr4u")
-linear_damp = 1.0
-script = ExtResource("1_ubr4u")
-
-[node name="ColorRect" type="ColorRect" parent="Ball"]
-offset_right = 40.0
-offset_bottom = 40.0
-metadata/_edit_use_anchors_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
-position = Vector2(20, 20)
-shape = SubResource("CircleShape2D_1gq7q")
-
-[node name="Camera2D" type="Camera2D" parent="Ball"]
-position = Vector2(20, 20)
-zoom = Vector2(1.5, 1.5)
+layouts = Array[PackedScene]([ExtResource("2_pv2gc"), null, null])
+ball_scene = ExtResource("2_puo58")
 
 [node name="Boundaries" type="Node2D" parent="."]
 
@@ -54,9 +170,39 @@ offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0, 1, 1, 1)
 
+[node name="L Wall2" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(0, 1786.9999)
+rotation = -0.5235988
+scale = Vector2(1, 44.679996)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/L Wall2"]
+position = Vector2(20, 20)
+scale = Vector2(4.22846, 1.720063)
+shape = SubResource("RectangleShape2D_2befn")
+
+[node name="ColorRect" type="ColorRect" parent="Boundaries/L Wall2"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
+[node name="L Wall3" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(440.99988, 2838)
+rotation = 0.2617994
+scale = Vector2(1, 44.679996)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/L Wall3"]
+position = Vector2(20, 20)
+scale = Vector2(4.22846, 1.720063)
+shape = SubResource("RectangleShape2D_2befn")
+
+[node name="ColorRect" type="ColorRect" parent="Boundaries/L Wall3"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
 [node name="R Wall" type="StaticBody2D" parent="Boundaries"]
-position = Vector2(1237, 136)
-scale = Vector2(1, 45.079998)
+position = Vector2(1234, 388)
+scale = Vector2(1, 34.48)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/R Wall"]
 position = Vector2(20, 20)
@@ -64,6 +210,35 @@ scale = Vector2(4.22846, 1.720063)
 shape = SubResource("RectangleShape2D_2befn")
 
 [node name="ColorRect" type="ColorRect" parent="Boundaries/R Wall"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
+[node name="R Wall2" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(1234, 1787)
+scale = Vector2(1, 34.48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/R Wall2"]
+position = Vector2(20, 20)
+scale = Vector2(4.22846, 1.720063)
+shape = SubResource("RectangleShape2D_2befn")
+
+[node name="ColorRect" type="ColorRect" parent="Boundaries/R Wall2"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
+[node name="R Wall3" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(1234, 3166)
+rotation = 0.5235988
+scale = Vector2(1, 34.48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/R Wall3"]
+position = Vector2(20, 20)
+scale = Vector2(4.22846, 1.720063)
+shape = SubResource("RectangleShape2D_2befn")
+
+[node name="ColorRect" type="ColorRect" parent="Boundaries/R Wall3"]
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0, 1, 1, 1)
@@ -84,7 +259,7 @@ offset_bottom = 40.0
 color = Color(0, 1, 1, 1)
 
 [node name="Floor" type="StaticBody2D" parent="Boundaries"]
-position = Vector2(20, 1789)
+position = Vector2(20, 4580)
 rotation = -1.5707964
 scale = Vector2(1, 31.84)
 
@@ -97,14 +272,6 @@ shape = SubResource("RectangleShape2D_2befn")
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0, 1, 1, 1)
-
-[node name="PegSpawner" type="Node2D" parent="."]
-position = Vector2(0, 312)
-script = ExtResource("4_odifc")
-peg_scene = ExtResource("2_odifc")
-
-[node name="PegLayoutEditor" type="Node2D" parent="."]
-script = ExtResource("5_k1ptq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -120,9 +287,9 @@ script = ExtResource("6_puo58")
 metadata/_edit_use_anchors_ = true
 
 [node name="platform" type="StaticBody2D" parent="."]
-position = Vector2(1237.0001, 136)
+position = Vector2(1277.0001, 520)
 rotation = -1.5707964
-scale = Vector2(0.11999631, 3.960001)
+scale = Vector2(0.11826626, 2.3125312)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
 position = Vector2(20, 20)
@@ -134,4 +301,60 @@ offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0, 1, 1, 1)
 
-[connection signal="body_entered" from="Ball" to="Ball" method="_on_body_entered"]
+[node name="platform2" type="StaticBody2D" parent="platform"]
+position = Vector2(118.37695, 39.35077)
+rotation = -1.5707972
+scale = Vector2(0.049086932, 84.880226)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform/platform2"]
+position = Vector2(20, 20)
+scale = Vector2(4.22846, 1.720063)
+shape = SubResource("RectangleShape2D_2befn")
+
+[node name="ColorRect" type="ColorRect" parent="platform/platform2"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
+[node name="platform3" type="StaticBody2D" parent="platform"]
+position = Vector2(4751.9893, -36.756348)
+rotation = -3.0904958
+scale = Vector2(0.51077634, -39.24926)
+skew = 1.468603
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform/platform3"]
+position = Vector2(20, 20)
+scale = Vector2(4.22846, 1.720063)
+shape = SubResource("RectangleShape2D_2befn")
+
+[node name="ColorRect" type="ColorRect" parent="platform/platform3"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
+[node name="BallSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(1319, 479)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(335, 4246)
+stream = ExtResource("5_k1ptq")
+autoplay = true
+max_distance = 1000.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(229, 4459.0005)
+scale = Vector2(0.3610971, 0.3610971)
+sprite_frames = SubResource("SpriteFrames_k1ptq")
+autoplay = "default"
+frame_progress = 0.28819013
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -500
+offset_left = -2188.0
+offset_top = 4745.0
+offset_right = -2124.0
+offset_bottom = 4809.0
+rotation = -1.5707964
+scale = Vector2(115.95284, 79.558945)
+texture = SubResource("GradientTexture2D_pv2gc")
+stretch_mode = 1

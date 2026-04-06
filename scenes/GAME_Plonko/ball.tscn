@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpg448eint45r"]
+
+[ext_resource type="Script" uid="uid://wjyvtfphskk7" path="res://scenes/GAME_Plonko/ball.gd" id="1_iklc4"]
+[ext_resource type="Texture2D" uid="uid://bh8yva2hynqqc" path="res://img/ianduckpixel.png" id="2_h5ogw"]
+[ext_resource type="AudioStream" uid="uid://fvfi45txy2fr" path="res://scenes/GAME_BordTennis/Hit damage 1.wav" id="3_vhl0y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ubr4u"]
+friction = 0.05
+bounce = 0.9
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1gq7q"]
+radius = 20.09975
+
+[node name="Ball" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_ubr4u")
+linear_damp = 1.0
+script = ExtResource("1_iklc4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(20, 20)
+shape = SubResource("CircleShape2D_1gq7q")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(20, 20)
+zoom = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(19.999998, 20)
+scale = Vector2(0.68749994, 0.625)
+texture = ExtResource("2_h5ogw")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_vhl0y")
+pitch_scale = 2.76
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

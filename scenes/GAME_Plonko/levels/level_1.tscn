@@ -1,0 +1,671 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2exmnssn0tne"]
+
+[ext_resource type="PackedScene" uid="uid://duwphgml3g2f0" path="res://scenes/GAME_Plonko/peg.tscn" id="1_sc5ar"]
+[ext_resource type="Script" uid="uid://v8bhr5ltfw50" path="res://scenes/GAME_Plonko/area_2d.gd" id="2_45mvy"]
+[ext_resource type="AudioStream" uid="uid://cbl5a0vvelgwj" path="res://sound/universfield-man-scream-08-352438.mp3" id="3_li6w0"]
+[ext_resource type="Script" uid="uid://b8st7y7fj3kc4" path="res://scenes/GAME_Plonko/levels/animatable_body_2d.gd" id="4_li6w0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sc5ar"]
+size = Vector2(9.459709, 22.092213)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ta2e"]
+size = Vector2(180.09753, 28.464722)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8ta2e"]
+friction = 0.0
+bounce = 0.77
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45mvy"]
+size = Vector2(8, 141)
+
+[node name="Level1" type="Node2D"]
+
+[node name="Boundaries" type="Node2D" parent="."]
+
+[node name="L Wall" type="StaticBody2D" parent="Boundaries"]
+scale = Vector2(1, 44.679996)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/L Wall"]
+position = Vector2(20, 20)
+scale = Vector2(4.22846, 1.720063)
+shape = SubResource("RectangleShape2D_sc5ar")
+
+[node name="ColorRect" type="ColorRect" parent="Boundaries/L Wall"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
+[node name="L Wall2" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(0, 1786.9999)
+rotation = -0.5235988
+scale = Vector2(1, 44.679996)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/L Wall2"]
+position = Vector2(20, 20)
+scale = Vector2(4.22846, 1.720063)
+shape = SubResource("RectangleShape2D_sc5ar")
+
+[node name="ColorRect" type="ColorRect" parent="Boundaries/L Wall2"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
+[node name="L Wall3" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(440.99988, 2838)
+rotation = 0.2617994
+scale = Vector2(1, 44.679996)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/L Wall3"]
+position = Vector2(20, 20)
+scale = Vector2(4.22846, 1.720063)
+shape = SubResource("RectangleShape2D_sc5ar")
+
+[node name="ColorRect" type="ColorRect" parent="Boundaries/L Wall3"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
+[node name="R Wall" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(1234, 388)
+scale = Vector2(1, 34.48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/R Wall"]
+position = Vector2(20, 20)
+scale = Vector2(4.22846, 1.720063)
+shape = SubResource("RectangleShape2D_sc5ar")
+
+[node name="ColorRect" type="ColorRect" parent="Boundaries/R Wall"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
+[node name="R Wall2" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(1234, 1787)
+scale = Vector2(1, 34.48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/R Wall2"]
+position = Vector2(20, 20)
+scale = Vector2(4.22846, 1.720063)
+shape = SubResource("RectangleShape2D_sc5ar")
+
+[node name="ColorRect" type="ColorRect" parent="Boundaries/R Wall2"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
+[node name="R Wall3" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(1234, 3166)
+rotation = 0.5235988
+scale = Vector2(1, 34.48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/R Wall3"]
+position = Vector2(20, 20)
+scale = Vector2(4.22846, 1.720063)
+shape = SubResource("RectangleShape2D_sc5ar")
+
+[node name="ColorRect" type="ColorRect" parent="Boundaries/R Wall3"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
+[node name="Ceiling" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(3.5527137e-14, 40)
+rotation = -1.5707964
+scale = Vector2(1, 31.84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Ceiling"]
+position = Vector2(20, 20)
+scale = Vector2(4.22846, 1.720063)
+shape = SubResource("RectangleShape2D_sc5ar")
+
+[node name="ColorRect" type="ColorRect" parent="Boundaries/Ceiling"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
+[node name="Floor" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(20, 4580)
+rotation = -1.5707964
+scale = Vector2(1, 31.84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Floor"]
+position = Vector2(20, 20)
+scale = Vector2(4.22846, 1.720063)
+shape = SubResource("RectangleShape2D_sc5ar")
+
+[node name="ColorRect" type="ColorRect" parent="Boundaries/Floor"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 1, 1, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(100, 1144)
+script = ExtResource("2_45mvy")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Area2D"]
+position = Vector2(739, 1519)
+stream = ExtResource("3_li6w0")
+volume_db = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(649, 962)
+rotation = 3.1415925
+scale = Vector2(4.2582026, -0.92067677)
+shape = SubResource("RectangleShape2D_8ta2e")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(1593, 414)
+physics_material_override = SubResource("PhysicsMaterial_8ta2e")
+script = ExtResource("4_li6w0")
+spin_speed = -10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_45mvy")
+
+[node name="ColorRect" type="ColorRect" parent="AnimatableBody2D/CollisionShape2D"]
+offset_left = 5.0
+offset_top = -72.5
+offset_right = 45.0
+offset_bottom = -32.5
+scale = Vector2(-0.2602526, 3.6878572)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatableBody2D2" type="AnimatableBody2D" parent="."]
+position = Vector2(171, 4525)
+physics_material_override = SubResource("PhysicsMaterial_8ta2e")
+script = ExtResource("4_li6w0")
+spin_speed = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D2"]
+shape = SubResource("RectangleShape2D_45mvy")
+
+[node name="ColorRect" type="ColorRect" parent="AnimatableBody2D2/CollisionShape2D"]
+offset_left = 5.0
+offset_top = -72.5
+offset_right = 45.0
+offset_bottom = -32.5
+scale = Vector2(-0.2602526, 3.6878572)
+
+[node name="PEG LAYOUT" type="Node2D" parent="."]
+
+[node name="Peg" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(100, 100)
+
+[node name="Peg2" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(200, 100)
+
+[node name="Peg3" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(300, 100)
+
+[node name="Peg4" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(400, 100)
+
+[node name="Peg5" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(500, 100)
+
+[node name="Peg6" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(600, 100)
+
+[node name="Peg7" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(700, 100)
+
+[node name="Peg8" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(800, 100)
+
+[node name="Peg9" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(900, 100)
+
+[node name="Peg10" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1000, 100)
+
+[node name="Peg11" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(150, 200)
+
+[node name="Peg12" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(250, 200)
+
+[node name="Peg13" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(350, 200)
+
+[node name="Peg14" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(450, 200)
+
+[node name="Peg15" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(550, 200)
+
+[node name="Peg16" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(650, 200)
+
+[node name="Peg17" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(750, 200)
+
+[node name="Peg18" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(850, 200)
+
+[node name="Peg19" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(950, 200)
+
+[node name="Peg20" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1050, 200)
+
+[node name="Peg21" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(100, 300)
+
+[node name="Peg22" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(200, 300)
+
+[node name="Peg23" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(300, 300)
+
+[node name="Peg24" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(400, 300)
+
+[node name="Peg25" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(500, 300)
+
+[node name="Peg26" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(600, 300)
+
+[node name="Peg27" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(700, 300)
+
+[node name="Peg28" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(800, 300)
+
+[node name="Peg29" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(900, 300)
+
+[node name="Peg30" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1000, 300)
+
+[node name="Peg31" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(150, 400)
+
+[node name="Peg32" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(250, 400)
+
+[node name="Peg33" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(350, 400)
+
+[node name="Peg34" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(450, 400)
+
+[node name="Peg35" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(550, 400)
+
+[node name="Peg36" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(650, 400)
+
+[node name="Peg37" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(750, 400)
+
+[node name="Peg38" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(850, 400)
+
+[node name="Peg39" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(950, 400)
+
+[node name="Peg40" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1050, 400)
+
+[node name="Peg41" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(100, 500)
+
+[node name="Peg42" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(200, 500)
+
+[node name="Peg43" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(300, 500)
+
+[node name="Peg44" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(400, 500)
+
+[node name="Peg45" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(500, 500)
+
+[node name="Peg46" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(600, 500)
+
+[node name="Peg47" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(700, 500)
+
+[node name="Peg48" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(800, 500)
+
+[node name="Peg49" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(900, 500)
+
+[node name="Peg50" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1000, 500)
+
+[node name="Peg51" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(150, 600)
+
+[node name="Peg52" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(250, 600)
+
+[node name="Peg53" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(350, 600)
+
+[node name="Peg54" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(450, 600)
+
+[node name="Peg55" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(550, 600)
+
+[node name="Peg56" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(650, 600)
+
+[node name="Peg57" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(750, 600)
+
+[node name="Peg58" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(850, 600)
+
+[node name="Peg59" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(950, 600)
+
+[node name="Peg60" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1050, 600)
+
+[node name="Peg61" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(100, 700)
+
+[node name="Peg62" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(200, 700)
+
+[node name="Peg63" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(300, 700)
+
+[node name="Peg64" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(400, 700)
+
+[node name="Peg65" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(500, 700)
+
+[node name="Peg66" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(600, 700)
+
+[node name="Peg67" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(700, 700)
+
+[node name="Peg68" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(800, 700)
+
+[node name="Peg69" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(900, 700)
+
+[node name="Peg70" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1000, 700)
+
+[node name="Peg71" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(150, 800)
+
+[node name="Peg72" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(250, 800)
+
+[node name="Peg73" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(350, 800)
+
+[node name="Peg74" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(450, 800)
+
+[node name="Peg75" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(550, 800)
+
+[node name="Peg76" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(650, 800)
+
+[node name="Peg77" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(750, 800)
+
+[node name="Peg78" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(850, 800)
+
+[node name="Peg79" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(950, 800)
+
+[node name="Peg80" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1050, 800)
+
+[node name="Peg81" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(207, 900)
+
+[node name="Peg82" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(307, 900)
+
+[node name="Peg83" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(407, 900)
+
+[node name="Peg84" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(507, 900)
+
+[node name="Peg85" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(607, 900)
+
+[node name="Peg86" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(707, 900)
+
+[node name="Peg87" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(807, 900)
+
+[node name="Peg88" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(907, 900)
+
+[node name="Peg89" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1007, 900)
+
+[node name="Peg90" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1107, 900)
+
+[node name="Peg91" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(257, 1000)
+
+[node name="Peg92" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(357, 1000)
+
+[node name="Peg93" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(457, 1000)
+
+[node name="Peg94" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(557, 1000)
+
+[node name="Peg95" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(657, 1000)
+
+[node name="Peg96" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(757, 1000)
+
+[node name="Peg97" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(857, 1000)
+
+[node name="Peg98" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(957, 1000)
+
+[node name="Peg99" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1057, 1000)
+
+[node name="Peg100" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1157, 1000)
+
+[node name="Peg101" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(207, 1100)
+
+[node name="Peg102" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(307, 1100)
+
+[node name="Peg103" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(407, 1100)
+
+[node name="Peg104" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(507, 1100)
+
+[node name="Peg105" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(607, 1100)
+
+[node name="Peg106" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(707, 1100)
+
+[node name="Peg107" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(807, 1100)
+
+[node name="Peg108" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(907, 1100)
+
+[node name="Peg109" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1007, 1100)
+
+[node name="Peg110" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1107, 1100)
+
+[node name="Peg111" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(257, 1200)
+
+[node name="Peg112" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(357, 1200)
+
+[node name="Peg113" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(457, 1200)
+
+[node name="Peg114" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(557, 1200)
+
+[node name="Peg115" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(657, 1200)
+
+[node name="Peg116" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(757, 1200)
+
+[node name="Peg117" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(857, 1200)
+
+[node name="Peg118" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(957, 1200)
+
+[node name="Peg119" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1057, 1200)
+
+[node name="Peg120" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1157, 1200)
+
+[node name="Peg121" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(207, 1300)
+
+[node name="Peg122" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(307, 1300)
+
+[node name="Peg123" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(407, 1300)
+
+[node name="Peg124" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(507, 1300)
+
+[node name="Peg125" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(607, 1300)
+
+[node name="Peg126" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(707, 1300)
+
+[node name="Peg127" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(807, 1300)
+
+[node name="Peg128" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(907, 1300)
+
+[node name="Peg129" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1007, 1300)
+
+[node name="Peg130" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1107, 1300)
+
+[node name="Peg131" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(257, 1400)
+
+[node name="Peg132" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(357, 1400)
+
+[node name="Peg133" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(457, 1400)
+
+[node name="Peg134" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(557, 1400)
+
+[node name="Peg135" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(657, 1400)
+
+[node name="Peg136" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(757, 1400)
+
+[node name="Peg137" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(857, 1400)
+
+[node name="Peg138" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(957, 1400)
+
+[node name="Peg139" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1057, 1400)
+
+[node name="Peg140" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1157, 1400)
+
+[node name="Peg141" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(207, 1500)
+
+[node name="Peg142" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(307, 1500)
+
+[node name="Peg143" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(407, 1500)
+
+[node name="Peg144" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(507, 1500)
+
+[node name="Peg145" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(607, 1500)
+
+[node name="Peg146" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(707, 1500)
+
+[node name="Peg147" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(807, 1500)
+
+[node name="Peg148" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(907, 1500)
+
+[node name="Peg149" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1007, 1500)
+
+[node name="Peg150" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1107, 1500)
+
+[node name="Peg151" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(257, 1600)
+
+[node name="Peg152" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(357, 1600)
+
+[node name="Peg153" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(457, 1600)
+
+[node name="Peg154" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(557, 1600)
+
+[node name="Peg155" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(657, 1600)
+
+[node name="Peg156" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(757, 1600)
+
+[node name="Peg157" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(857, 1600)
+
+[node name="Peg158" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(957, 1600)
+
+[node name="Peg159" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1057, 1600)
+
+[node name="Peg160" parent="PEG LAYOUT" instance=ExtResource("1_sc5ar")]
+position = Vector2(1157, 1600)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
