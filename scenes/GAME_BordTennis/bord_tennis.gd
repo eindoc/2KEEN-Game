@@ -15,7 +15,7 @@ func setupLevel():
 	for r in rows:
 		for c in columns:
 			var randomNumber = randi_range(0, 2)
-			if randomNumber > 0:
+			if randomNumber > 1:
 				var newBrick = brickObject.instantiate()
 				add_child(newBrick)
 				newBrick.position = Vector2(margin + (130 * c), margin + (150 * r))

@@ -172,7 +172,6 @@ collision_layer = 131
 collision_mask = 131
 up_direction = Vector2(0.57729197, -0.81653786)
 script = ExtResource("4_iv7is")
-START_SPEED = 600
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Main/Ball"]
 position = Vector2(342.83395, 540.0358)
@@ -250,12 +249,12 @@ scale = Vector2(0.486498, 0.486419)
 metadata/_edit_use_anchors_ = true
 
 [node name="PlayerBumperRight" type="CollisionShape2D" parent="Main/Borders"]
-position = Vector2(363.00003, 453.97168)
+position = Vector2(364.99954, 453.57245)
 scale = Vector2(1.94711, 5.20566)
 shape = SubResource("RectangleShape2D_byv5v")
 
 [node name="PlayerBumperLeft" type="CollisionShape2D" parent="Main/Borders"]
-position = Vector2(-363, 446.00003)
+position = Vector2(-364.444, 446.42957)
 scale = Vector2(1.94711, 5.20566)
 shape = SubResource("RectangleShape2D_byv5v")
 
@@ -308,6 +307,14 @@ offset_right = 1384.0
 offset_bottom = 87.0
 color = Color(0, 0, 0, 1)
 
+[node name="Lives" type="Label" parent="Main/Hud"]
+offset_left = 1078.0
+offset_top = 12.0
+offset_right = 1135.0
+offset_bottom = 35.0
+scale = Vector2(2.7200003, 2.7200003)
+text = "Lives: 3"
+
 [node name="background" type="ColorRect" parent="Main"]
 z_index = -200
 offset_left = -388.88837
@@ -319,10 +326,11 @@ color = Color(0.27911195, 0.26616436, 0.26357484, 1)
 [node name="Sprite2D2" type="Sprite2D" parent="Main/background"]
 position = Vector2(384.99945, 796.4304)
 scale = Vector2(0.7332911, 2.3006043)
+skew = -0.4956735
 texture = ExtResource("13_gqgkg")
 
 [node name="BrickTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 8.0
 autostart = true
 
 [node name="LeftTouch" type="TouchScreenButton" parent="."]
