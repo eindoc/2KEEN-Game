@@ -7,3 +7,5 @@ This is an arcade app I decided to make because I couldn't decide between a few 
 
 - April 21:
   	Wholeeeeeee lot of experimenting and breaking things. My inexperience with Godot is making some of the physics wonky, but it works. Gonna finish up Bord Tennis and move on.
+
+- April 22: Today felt noticeably smoother. I landed on a concept/theme, got some stock placeholder assets in place so it's starting to look like an actual game now. I need to organize the files and folders, it's starting to look like a mess. Good news is my million failures from yesterday helped, I think. Much more comfortable with Godot now. It's fun again!
