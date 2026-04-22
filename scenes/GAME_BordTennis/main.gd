@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Node2D
 
 var current_score = 0
 @onready var score_label = $Hud/Score
@@ -18,9 +18,9 @@ func add_point():
 	score_label.text = str(current_score)
 	emit_signal("score_changed")
 	
-	$Ball.increase_speed_by(10)	
-	if current_score % 8 == 0:
-		$BallsXtra.new_ball()
+	$Ball.increase_speed_by(20)
+	#if current_score % 8 == 0:
+		#$BallsXtra.new_ball()
 	
 	if current_score > SaveLoad.highest_record:
 		SaveLoad.highest_record = current_score

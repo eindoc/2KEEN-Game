@@ -5,7 +5,7 @@ extends Node2D
 
 var columns = 10
 var rows = 1
-var margin = 100
+var margin = 25
 
 func _ready() -> void:
 	setupLevel()
@@ -18,7 +18,7 @@ func setupLevel():
 			if randomNumber > 0:
 				var newBrick = brickObject.instantiate()
 				add_child(newBrick)
-				newBrick.position = Vector2(margin + (98 * c), margin + (168 * r))
+				newBrick.position = Vector2(margin + (130 * c), margin + (150 * r))
 	
 	
 func _process(delta: float) -> void:

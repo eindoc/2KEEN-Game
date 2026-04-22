@@ -47,7 +47,6 @@ size = Vector2(67.525764, 33.15789)
 light_mask = 2
 visibility_layer = 2
 z_index = -5
-scale = Vector2(0.3, 0.2)
 collision_layer = 2
 collision_mask = 2
 mass = 0.069

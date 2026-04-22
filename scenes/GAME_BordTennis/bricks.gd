@@ -1,6 +1,9 @@
 extends RigidBody2D
 
+var spin_speed : float = 0.0
+
 func _ready() -> void:
+	spin_speed = randf_range(-40.0, 40.0)
 	$AnimatedSprite2D.play()
 
 func hit():
@@ -11,3 +14,9 @@ func hit():
 	
 	await get_tree().create_timer(1).timeout
 	queue_free()
+	
+func _physics_process(delta: float) -> void:
+	rotation += spin_speed * delta
+	if global_position.y > 720:
+		print("brick off screen")
+		queue_free()
