@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b55ajssothcnd"]
+[gd_scene load_steps=30 format=3 uid="uid://b55ajssothcnd"]
 
 [ext_resource type="Script" uid="uid://qnywrq4g6u0x" path="res://scenes/GAME_BordTennis/bord_tennis.gd" id="1_byv5v"]
 [ext_resource type="Script" uid="uid://1y274dalxcrj" path="res://scenes/GAME_BordTennis/main.gd" id="2_t2iqu"]
@@ -124,6 +124,8 @@ size = Vector2(100, 360)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6hhbj"]
 radius = 40.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r52op"]
 
 [node name="BordTennis" type="Node2D"]
 script = ExtResource("1_byv5v")
@@ -371,9 +373,65 @@ scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_6hhbj")
 action = "ui_cancel"
 
+[node name="GameOverPanel" type="PanelContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 399.0
+offset_top = 236.0
+offset_right = 872.0
+offset_bottom = 579.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="GameOverPanel"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverPanel"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Title" type="Label" parent="GameOverPanel/VBoxContainer"]
+layout_mode = 2
+text = "GAME OVER"
+
+[node name="FinalScore" type="Label" parent="GameOverPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="HighScore" type="Label" parent="GameOverPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+
+[node name="PlayAgain" type="Button" parent="GameOverPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "PLAY AGAIN?"
+
+[node name="ReturnToArcade" type="Button" parent="GameOverPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "RETURN TO ARCADE"
+
+[node name="PlayAgainTouch" type="TouchScreenButton" parent="GameOverPanel"]
+position = Vector2(233, 208)
+scale = Vector2(24, 3.520005)
+shape = SubResource("RectangleShape2D_r52op")
+
+[node name="PlayAgainTouch2" type="TouchScreenButton" parent="GameOverPanel"]
+position = Vector2(235, 307)
+scale = Vector2(23.900524, 3.5504375)
+shape = SubResource("RectangleShape2D_r52op")
+
 [connection signal="animation_finished" from="Main/Player/Paddlebounce" to="Main/Ball" method="_on_paddlebounce_animation_finished"]
 [connection signal="animation_finished" from="Main/Ball/AnimatedSprite2D" to="Main/Ball" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Main/Ball/HitCooldownTimer" to="Main/Ball" method="_on_hit_cooldown_timer_timeout"]
 [connection signal="body_entered" from="Main/Deathzone" to="." method="_on_deathzone_body_entered"]
 [connection signal="body_entered" from="Main/Deathzone" to="Main/Ball" method="_on_deathzone_body_entered"]
 [connection signal="timeout" from="BrickTimer" to="." method="_on_brick_timer_timeout"]
+[connection signal="pressed" from="GameOverPanel/VBoxContainer/PlayAgain" to="Main" method="_on_play_again_pressed"]
+[connection signal="pressed" from="GameOverPanel/VBoxContainer/ReturnToArcade" to="Main" method="_on_return_to_arcade_pressed"]

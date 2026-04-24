@@ -23,6 +23,7 @@ Hud="*res://scenes/GAME_BordTennis/hud.gd"
 SaveLoad="*res://save_load.gd"
 GlobalScores="*res://global_scores.gd"
 PlonkoScore="*res://scenes/GAME_Plonko/plonkoscore.gd"
+BordTennisGlobal="*res://BordTennisGlobal.gd"
 
 [display]
 

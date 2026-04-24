@@ -6,12 +6,20 @@ extends Node2D
 @onready var brickObjects = $Bricks
 @onready var extraball = $BallsXtra
 
+@onready var game_over_panel = get_parent().get_node("GameOverPanel")
+@onready var final_score_label = get_parent().get_node("GameOverPanel/VBoxContainer/FinalScore")
+@onready var game_over_high_score_label = get_parent().get_node("GameOverPanel/VBoxContainer/HighScore")
+
 var current_score = 0
 var lives = 3
 
 signal score_changed(score)
 
 func _ready():
+	print(get_parent().get_node_or_null("GameOverPanel"))
+	print(get_node_or_null("../GameOverPanel"))
+	print(get_node_or_null("../GameOverPanel/VBoxContainer/FinalScore"))
+	print(get_node_or_null("../GameOverPanel/VBoxContainer/FinalScore"))
 	GlobalScores.update_high_score(SaveLoad.highest_record)
 	highest_label.text = str("High Score: ", SaveLoad.highest_record)
 	update_lives_display()
@@ -43,7 +51,19 @@ func lose_life():
 	
 func update_lives_display():
 	lives_label.text = str("Lives: ", lives)
-func game_over():
-	GlobalScores.update_high_score(current_score)
-	get_tree().change_scene_to_file("res://scenes/arcade.tscn")
 	
+func game_over():
+	print(final_score_label)
+	print(game_over_high_score_label)
+	print(game_over_panel)
+	$Ball.is_active = false
+	final_score_label.text = str("Score: ", current_score)
+	game_over_high_score_label.text = str("High Score: ", SaveLoad.highest_record)
+	GlobalScores.update_high_score(current_score)
+	game_over_panel.visible = true
+	
+func _on_play_again_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/GAME_BordTennis/bord_tennis.tscn")
+
+func _on_return_to_arcade_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/arcade.tscn")
