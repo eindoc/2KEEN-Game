@@ -7,7 +7,7 @@ func _ready():
 	
 	var score_label = $GlobalScores
 	if score_label:
-		score_label.text = "high score: " + str(GlobalScores.BordTennisHighScore)
+		score_label.text = "high score33333: " + str(GlobalScores.BordTennisHighScore)
 	
 	if score_label:
 		print("Setting label text...")

@@ -97,6 +97,7 @@ animations = [{
 radius = 16.14594
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2iqu"]
+size = Vector2(20, 20.060818)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_byv5v"]
 size = Vector2(14.9525, 60.714027)
@@ -138,10 +139,10 @@ scale = Vector2(1.8000023, 0.55999875)
 script = ExtResource("2_t2iqu")
 
 [node name="Player" type="CharacterBody2D" parent="Main" groups=["player"]]
-position = Vector2(-180.55531, -1512.5034)
+position = Vector2(-174.99979, -1203.5741)
 scale = Vector2(0.49570695, 1.985204)
+collision_mask = 3
 script = ExtResource("3_s0moa")
-speed = 1000
 
 [node name="Paddlebounce" type="AnimatedSprite2D" parent="Main/Player"]
 unique_name_in_owner = true
@@ -210,7 +211,7 @@ visibility_layer = 3
 script = ExtResource("5_8lv80")
 
 [node name="Left" type="CollisionShape2D" parent="Main/Borders"]
-position = Vector2(-355, 0)
+position = Vector2(-256, 76.786)
 scale = Vector2(0.546415, 68.5338)
 shape = SubResource("RectangleShape2D_t2iqu")
 
@@ -223,7 +224,7 @@ scale = Vector2(0.486498, 0.486419)
 metadata/_edit_use_anchors_ = true
 
 [node name="Right" type="CollisionShape2D" parent="Main/Borders"]
-position = Vector2(355, 0)
+position = Vector2(256, 80.357)
 scale = Vector2(0.546415, 68.5338)
 shape = SubResource("RectangleShape2D_t2iqu")
 debug_color = Color(0, 0.631373, 0.466667, 0.737255)
@@ -237,7 +238,7 @@ scale = Vector2(0.486498, 0.486419)
 metadata/_edit_use_anchors_ = true
 
 [node name="Top" type="CollisionShape2D" parent="Main/Borders"]
-position = Vector2(-2.7777646, -501.7868)
+position = Vector2(-3.9532166, -501.78677)
 rotation = 1.5708
 scale = Vector2(1.3464115, 38.6538)
 shape = SubResource("RectangleShape2D_t2iqu")
@@ -261,7 +262,7 @@ scale = Vector2(1.94711, 5.20566)
 shape = SubResource("RectangleShape2D_byv5v")
 
 [node name="Deathzone" type="Area2D" parent="Main"]
-position = Vector2(1.1111096, 5.357132)
+position = Vector2(1.1111096, 351.7865)
 scale = Vector2(1, 1.1428574)
 collision_layer = 128
 collision_mask = 128
@@ -336,7 +337,7 @@ wait_time = 8.0
 autostart = true
 
 [node name="LeftTouch" type="TouchScreenButton" parent="."]
-position = Vector2(130, 416)
+position = Vector2(101, 416)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_6hhbj")
 action = "Left"
@@ -352,7 +353,7 @@ text = "<"
 metadata/_edit_use_anchors_ = true
 
 [node name="RightTouch" type="TouchScreenButton" parent="."]
-position = Vector2(1150, 416)
+position = Vector2(1181, 416)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_6hhbj")
 action = "Right"

@@ -31,7 +31,7 @@ func add_point():
 	score_label.text = str(current_score)
 	emit_signal("score_changed")
 	
-	$Ball.increase_speed_by(50)
+	#$Ball.increase_speed_by(50)
 	#if current_score % 8 == 0:
 		#$BallsXtra.new_ball()
 	

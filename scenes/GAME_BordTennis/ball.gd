@@ -23,13 +23,23 @@ func _physics_process(delta: float) -> void:
 
 		if collision:
 			var collider = collision.get_collider()
-
+			$AnimatedSprite2D.play("bounce")
+			
 			if collision.get_collider().has_method("hit"):
-				collision.get_collider().hit()
+				collider.hit()
 				main_score.add_point()
+				START_SPEED += 50
+				
+				var diff = global_position - collider.global_position
+				if abs(diff.x) > abs(diff.y):
+					velocity.x = -velocity.x
+				else:
+					velocity.y = -velocity.y
+
+			else:
+				velocity = velocity.bounce(collision.get_normal())
 
 			if collider.name == "Player" and velocity:
-				$AnimatedSprite2D.play("bounce")
 				%Paddlebounce.play("bounce")
 				var paddle_velocity = collider.velocity.x
 				var influence = 0.5
@@ -39,7 +49,6 @@ func _physics_process(delta: float) -> void:
 					$BallHit.play()
 					hit_cooldown = true
 					$HitCooldownTimer.start()
-			velocity = velocity.bounce(collision.get_normal())
 
 		if velocity.x > 0 and velocity.x < 100:
 			velocity.x = -200
@@ -47,6 +56,7 @@ func _physics_process(delta: float) -> void:
 
 func new_ball():
 	print("new ball spawned")
+	START_SPEED = 600
 	var paddle = get_parent().get_node("Player")
 	var paddle_rect = paddle.get_node("ColorRect")
 	var paddle_top = paddle.position.x - (paddle_rect.size.x / 2)
