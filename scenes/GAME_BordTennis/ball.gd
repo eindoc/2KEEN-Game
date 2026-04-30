@@ -17,8 +17,11 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	if not is_active:
-		print("not active bro####")
+		pass
+		#print("not active bro####")
 	if is_active:
+		#print(velocity.y)
+		#print(START_SPEED)
 		var collision = move_and_collide(velocity * delta)
 
 		if collision:
@@ -28,7 +31,7 @@ func _physics_process(delta: float) -> void:
 			if collision.get_collider().has_method("hit"):
 				collider.hit()
 				main_score.add_point()
-				START_SPEED += 50
+				START_SPEED += 10
 				
 				var diff = global_position - collider.global_position
 				if abs(diff.x) > abs(diff.y):
@@ -40,7 +43,7 @@ func _physics_process(delta: float) -> void:
 				velocity = velocity.bounce(collision.get_normal())
 
 			if collider.name == "Player" and velocity:
-				%Paddlebounce.play("bounce")
+				#%Paddlebounce.play("bounce")
 				var paddle_velocity = collider.velocity.x
 				var influence = 0.5
 				velocity.x += paddle_velocity * influence
@@ -52,6 +55,8 @@ func _physics_process(delta: float) -> void:
 
 		if velocity.x > 0 and velocity.x < 100:
 			velocity.x = -200
+		if velocity.y > -250 && velocity.y < 250:
+			velocity.y = velocity.y * 1.5
 
 
 func new_ball():

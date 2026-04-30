@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var ball = preload("res://scenes/GAME_BordTennis/ball.gd")
-@onready var brickObject = preload("res://scenes/GAME_BordTennis/bricks.tscn")
+@onready var brickObject = preload("res://scenes/GAME_BordTennis/enemies/zombie1.tscn")
 
 var columns = 10
 var rows = 1
@@ -10,7 +10,6 @@ var margin = 25
 func _ready() -> void:
 	print_tree_pretty()
 	setupLevel()
-	
 	
 #func setupLevel():
 	#for r in rows:
@@ -36,8 +35,8 @@ func setupLevel():
 			if randomNumber > 1:
 				var newBrick = brickObject.instantiate()
 				add_child(newBrick)
-				var stagger = randf_range(-30, 30)
-				newBrick.position = Vector2(left_bound + (column_spacing * c), margin + (150 * r) + stagger)
+				var stagger = randf_range(-150, 75)
+				newBrick.position = Vector2(left_bound + (column_spacing * c), -100 + stagger)
 	
 	
 func _process(delta: float) -> void:

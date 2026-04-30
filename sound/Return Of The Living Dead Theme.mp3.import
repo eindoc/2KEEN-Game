@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfr6sinnbpb6m"
+path="res://.godot/imported/Return Of The Living Dead Theme.mp3-8d22eb11ed570b9e772f9bc231d06a5d.mp3str"
+
+[deps]
+
+source_file="res://sound/Return Of The Living Dead Theme.mp3"
+dest_files=["res://.godot/imported/Return Of The Living Dead Theme.mp3-8d22eb11ed570b9e772f9bc231d06a5d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

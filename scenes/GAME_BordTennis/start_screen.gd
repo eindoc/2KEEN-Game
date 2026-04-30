@@ -9,7 +9,7 @@ var blink_timer = 0.0
 func _ready() -> void:
 	high_score_label.text = str("High Score: ", SaveLoad.highest_record)
 	
-	demo_timer.start(5.0)
+	demo_timer.start(2.0)
 	
 
 func _input(event):
@@ -25,7 +25,8 @@ func _on_timer_timeout():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	blink_timer += delta
-	if blink_timer >= 0.6:
-		press_start_label.visible = !press_start_label.visible
-		blink_timer = 0.0
+	pass
+	#blink_timer += delta
+	#if blink_timer >= 0.6:
+		#press_start_label.visible = !press_start_label.visible
+		#blink_timer = 0.0

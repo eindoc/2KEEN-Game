@@ -3,8 +3,8 @@ extends Node2D
 @onready var score_label = $Hud/Score
 @onready var highest_label = $Hud/HighScore
 @onready var lives_label = $Hud/Lives
-@onready var brickObjects = $Bricks
-@onready var extraball = $BallsXtra
+#@onready var brickObjects = $Bricks
+#@onready var extraball = $BallsXtra
 
 @onready var game_over_panel = get_parent().get_node("GameOverPanel")
 @onready var final_score_label = get_parent().get_node("GameOverPanel/VBoxContainer/FinalScore")
@@ -16,10 +16,10 @@ var lives = 3
 signal score_changed(score)
 
 func _ready():
-	print(get_parent().get_node_or_null("GameOverPanel"))
-	print(get_node_or_null("../GameOverPanel"))
-	print(get_node_or_null("../GameOverPanel/VBoxContainer/FinalScore"))
-	print(get_node_or_null("../GameOverPanel/VBoxContainer/FinalScore"))
+	#print(get_parent().get_node_or_null("GameOverPanel"))
+	#print(get_node_or_null("../GameOverPanel"))
+	#print(get_node_or_null("../GameOverPanel/VBoxContainer/FinalScore"))
+	#print(get_node_or_null("../GameOverPanel/VBoxContainer/FinalScore"))
 	GlobalScores.update_high_score(SaveLoad.highest_record)
 	highest_label.text = str("High Score: ", SaveLoad.highest_record)
 	update_lives_display()
@@ -42,6 +42,9 @@ func add_point():
 	SaveLoad.save_score()
 	
 func lose_life():
+	if BordTennisGlobal.demo_mode:
+		get_tree().change_scene_to_file("res://scenes/GAME_BordTennis/control.tscn")
+		return
 	lives -=1
 	update_lives_display()
 	if lives <= 0:
@@ -67,3 +70,9 @@ func _on_play_again_pressed() -> void:
 
 func _on_return_to_arcade_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/arcade.tscn")
+	
+func _input(event):
+	if BordTennisGlobal.demo_mode:
+		if event.is_pressed() and not event.is_echo():
+			BordTennisGlobal.demo_mode = false
+			get_tree().change_scene_to_file("res://scenes/GAME_BordTennis/control.tscn")
