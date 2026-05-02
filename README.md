@@ -12,3 +12,5 @@ This is an arcade app I decided to make because I couldn't decide between a few 
 - April 22: Today felt noticeably smoother. I landed on a concept/theme, got some stock placeholder assets in place so it's starting to look like an actual game now. I need to organize the files and folders, it's starting to look like a mess. Good news is my million failures from yesterday helped, I think. Much more comfortable with Godot now. It's fun again!
 
 - April 24: Added a start screen as its own scene, hoping to add a demo to it. Also added a game over panel, and added enough touch buttons to make the arcade workable on mobile. I think every system is done. I should think adding arcade games will be much easier, and more about design.
+
+- May 2: Cosmetic changes and some tinkering with gameplay. I'm still not decided on whether or not to have acceleration and decceleration to simulate a weighted paddle.
