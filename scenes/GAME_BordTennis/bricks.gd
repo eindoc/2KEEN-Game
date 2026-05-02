@@ -3,12 +3,17 @@ extends RigidBody2D
 #var spin_speed : float = 0.0
 
 func _ready() -> void:
+	print_tree_pretty()
 	#spin_speed = randf_range(-40.0, 40.0)
 	$AnimatedSprite2D.play()
 	$ZombiedeathAnimation.visible = false
+	body_entered.connect(_on_body_entered)
+	print("zombie ready, signal connected: ", body_entered.is_connected(_on_body_entered))
 
 func hit():
+	print("fasdfasdfasdf")
 	$AnimatedSprite2D.visible = false
+	await get_tree().process_frame
 	$CollisionShape2D.disabled = true
 	$AudioStreamPlayer2D.play()
 	$ZombiedeathAnimation.visible = true
@@ -22,6 +27,22 @@ func hit():
 	
 func _physics_process(delta: float) -> void:
 	#rotation += spin_speed * delta
-	if global_position.y > 720:
+	if global_position.y > 980:
 		print("brick off screen")
 		queue_free()
+		
+#func _on_body_entered(body):
+		#if body.name == "Player":
+			#freeze = true
+			#print("hit player: ", body.name)
+			#print("player has slowdown: ", body.has_method("slowdown"))
+			#body.slowdown()
+			#hit()
+			
+func _on_body_entered(body):
+	print("body entered: ", body.name)
+	if body.name == "Player":
+		freeze = true
+		print("has slowdown method: ", body.has_method("slowdown"))
+		body.slowdown()
+		hit()

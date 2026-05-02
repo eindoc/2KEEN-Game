@@ -70,7 +70,7 @@ scale = Vector2(96.4292, 6.76428)
 polygon = PackedVector2Array(32, 32, 32, 22, 0, 22, 0, 32)
 
 [node name="ArcadeMachine2" parent="." groups=["Arcade Machines"] instance=ExtResource("5_wer3u")]
-position = Vector2(296, 617)
+position = Vector2(296, 613)
 
 [node name="ArcadeMachine" parent="ArcadeMachine2" groups=["Arcade Machines"] instance=ExtResource("3_24fbm")]
 texture_filter = 1
@@ -78,7 +78,7 @@ texture_filter = 1
 [node name="AudioStreamPlayer2D" parent="ArcadeMachine2/ArcadeMachine" instance=ExtResource("5_8hgfh")]
 
 [node name="ComingSoonMachine" parent="." instance=ExtResource("6_sktuj")]
-position = Vector2(505, 617)
+position = Vector2(505, 613)
 
 [node name="ArcadeMachine" parent="ComingSoonMachine" groups=["Arcade Machines"] instance=ExtResource("3_24fbm")]
 texture_filter = 1
@@ -123,9 +123,9 @@ stretch_mode = 1
 [node name="TextureRect2" type="Sprite2D" parent="background"]
 modulate = Color(0.40760016, 0.40760016, 0.40760016, 0.39607844)
 z_index = -100
-position = Vector2(642.75867, 375.98962)
-rotation = 4.7123823
-scale = Vector2(0.57773083, 1.7819897)
+position = Vector2(642.75867, 342.54797)
+rotation = 1.5707964
+scale = Vector2(0.5323739, 1.7819897)
 texture = SubResource("GradientTexture2D_m2wjg")
 
 [node name="pixelianhead" type="Sprite2D" parent="background"]
@@ -155,6 +155,14 @@ offset_bottom = 394.0
 theme_override_font_sizes/font_size = 32
 script = ExtResource("14_n02mf")
 
+[node name="ColorRect" type="ColorRect" parent="GlobalScores"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(10.96, 7.9199996)
+color = Color(0.8539175, 0.8539175, 0.8539175, 1)
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_fgq0x")
 volume_db = -10.285
@@ -177,7 +185,7 @@ text = "<"
 metadata/_edit_use_anchors_ = true
 
 [node name="RightTouch" type="TouchScreenButton" parent="."]
-position = Vector2(1191, 394)
+position = Vector2(1196, 394)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_fgq0x")
 action = "Right"

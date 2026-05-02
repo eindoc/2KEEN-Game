@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var player = preload("res://player.gd")
 
 var win_size : Vector2
-var START_SPEED : int = 600
+var START_SPEED = 100
 var dir : Vector2
 var is_active = true
 var hit_cooldown = false
@@ -17,20 +17,33 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	if not is_active:
-		print("not active bro####")
+		pass
+		#print("not active bro####")
 	if is_active:
+		#print(velocity.y)
+		#print(START_SPEED)
 		var collision = move_and_collide(velocity * delta)
 
 		if collision:
 			var collider = collision.get_collider()
-
+			$AnimatedSprite2D.play("bounce")
+			
 			if collision.get_collider().has_method("hit"):
-				collision.get_collider().hit()
+				collider.hit()
 				main_score.add_point()
+				START_SPEED += 100
+				
+				var diff = global_position - collider.global_position
+				if abs(diff.x) > abs(diff.y):
+					velocity.x = -velocity.x
+				else:
+					velocity.y = -velocity.y
+
+			else:
+				velocity = velocity.bounce(collision.get_normal())
 
 			if collider.name == "Player" and velocity:
-				$AnimatedSprite2D.play("bounce")
-				%Paddlebounce.play("bounce")
+				#%Paddlebounce.play("bounce")
 				var paddle_velocity = collider.velocity.x
 				var influence = 0.5
 				velocity.x += paddle_velocity * influence
@@ -39,14 +52,16 @@ func _physics_process(delta: float) -> void:
 					$BallHit.play()
 					hit_cooldown = true
 					$HitCooldownTimer.start()
-			velocity = velocity.bounce(collision.get_normal())
 
 		if velocity.x > 0 and velocity.x < 100:
 			velocity.x = -200
+		if velocity.y > -250 && velocity.y < 250:
+			velocity.y = velocity.y * 1.5
 
 
 func new_ball():
 	print("new ball spawned")
+	var speed = START_SPEED
 	var paddle = get_parent().get_node("Player")
 	var paddle_rect = paddle.get_node("ColorRect")
 	var paddle_top = paddle.position.x - (paddle_rect.size.x / 2)
