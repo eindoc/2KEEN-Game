@@ -1,4 +1,5 @@
-plonko time
+Live version at Itch.io: https://eindoc.itch.io/ians-arcade-project
+
 This is an arcade app I decided to make because I couldn't decide between a few different projects. So I made an arcade as a hub. I've tried setting it up as best I can to make scaling and editing easier. Maybe I'll never stop adding arcade games? Dunno yet.
 
 
