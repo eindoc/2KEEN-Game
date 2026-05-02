@@ -50,6 +50,9 @@ func _on_body_entered(body):
 		print("main_score ref: ", main_score)
 		if main_score:
 			main_score.add_point()
+			main_score.add_point()
+			main_score.add_point()
+			
 		print("main_score ref: ", main_score)
 		print("add point")
 		print("has slowdown method: ", body.has_method("slowdown"))

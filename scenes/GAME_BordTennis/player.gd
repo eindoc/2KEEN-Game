@@ -4,7 +4,7 @@ var speed = 1000
 var base_speed = 0
 var is_slowed = false
 var friction = 3000
-var acceleration = 8000
+#var acceleration = 8000
 
 var min_x : float
 var max_x : float
@@ -23,9 +23,11 @@ func slowdown():
 		is_slowed = true
 		speed = base_speed * 0.4
 		$Paddlebounce.play("bloody")
+		$bloodychainsaw.play()
 		await get_tree().create_timer(2.0).timeout
 		speed = base_speed
 		$Paddlebounce.play("idle")
+		$bloodychainsaw.stop()
 		is_slowed = false
 	
 
@@ -41,11 +43,16 @@ func _physics_process(_delta: float) -> void:
 				direction = 1.0
 	else:
 		direction = Input.get_axis("Left", "Right")
-		
 	if direction:
-		velocity.x = move_toward(velocity.x, direction * speed, acceleration * _delta)
+		velocity.x = direction * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, friction * _delta)
+		velocity.x = move_toward(velocity.y, 0, speed)
+		
+	#FOR ACCELERATION OR DECELERATION ON PLAYER PADDLE
+	#if direction:
+		#velocity.x = move_toward(velocity.x, direction * speed, acceleration * _delta)
+	#else:
+		#velocity.x = move_toward(velocity.x, 0, friction * _delta)
 		
 	velocity.y = 0
 	move_and_slide()

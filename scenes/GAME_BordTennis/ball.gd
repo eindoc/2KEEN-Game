@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var player = preload("res://player.gd")
 
 var win_size : Vector2
-var START_SPEED : int = 600
+var START_SPEED = 100
 var dir : Vector2
 var is_active = true
 var hit_cooldown = false
@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 			if collision.get_collider().has_method("hit"):
 				collider.hit()
 				main_score.add_point()
-				START_SPEED += 10
+				START_SPEED += 100
 				
 				var diff = global_position - collider.global_position
 				if abs(diff.x) > abs(diff.y):
@@ -61,7 +61,7 @@ func _physics_process(delta: float) -> void:
 
 func new_ball():
 	print("new ball spawned")
-	START_SPEED = 600
+	var speed = START_SPEED
 	var paddle = get_parent().get_node("Player")
 	var paddle_rect = paddle.get_node("ColorRect")
 	var paddle_top = paddle.position.x - (paddle_rect.size.x / 2)

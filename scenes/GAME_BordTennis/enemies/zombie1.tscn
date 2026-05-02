@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://ljysb3j0kerh"]
 
 [ext_resource type="Script" uid="uid://sgxc61sxrbam" path="res://scenes/GAME_BordTennis/enemies/zombie1.gd" id="1_w6fm5"]
-[ext_resource type="AudioStream" uid="uid://fvfi45txy2fr" path="res://scenes/GAME_BordTennis/Hit damage 1.wav" id="2_giic5"]
+[ext_resource type="AudioStream" uid="uid://c2c1bve0rgu8l" path="res://sound/Gore_Wet_4.wav" id="2_w6fm5"]
 [ext_resource type="Texture2D" uid="uid://p5rvgx32nhfg" path="res://scenes/GAME_BordTennis/1Zombie-Death1.png" id="3_ogc6g"]
 [ext_resource type="Texture2D" uid="uid://cxrbio0dn8jlk" path="res://scenes/GAME_BordTennis/1Zombie-Runcopy-Sheet.png" id="4_7clpr"]
 
@@ -141,7 +141,7 @@ max_contacts_reported = 1
 script = ExtResource("1_w6fm5")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_giic5")
+stream = ExtResource("2_w6fm5")
 pitch_scale = 1.5
 
 [node name="ZombiedeathAnimation" type="AnimatedSprite2D" parent="."]
