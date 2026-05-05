@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
-config/name="2KEEN"
+config/name="2KEEN Game"
 run/main_scene="uid://baf4lmiv4yt27"
-config/features=PackedStringArray("4.5", "GL Compatibility")
+config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0.61005944, 0.1560109, 0.25330698, 1)
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=1000
@@ -30,7 +34,6 @@ BordTennisGlobal="*res://BordTennisGlobal.gd"
 window/size/viewport_width=1280
 window/size/viewport_height=960
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 window/handheld/orientation=1
 
 [global_group]

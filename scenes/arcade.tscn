@@ -59,18 +59,18 @@ script = ExtResource("1_r0kxb")
 position = Vector2(0, 57)
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor"]
-position = Vector2(0, 470)
+position = Vector2(-0.2796631, 717)
 scale = Vector2(39.968754, 5.76)
 texture = ExtResource("1_pig0t")
 centered = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Floor"]
-position = Vector2(0, 476)
+position = Vector2(-0.2796631, 723)
 scale = Vector2(96.4292, 6.76428)
 polygon = PackedVector2Array(32, 32, 32, 22, 0, 22, 0, 32)
 
 [node name="ArcadeMachine2" parent="." groups=["Arcade Machines"] instance=ExtResource("5_wer3u")]
-position = Vector2(296, 613)
+position = Vector2(283, 864)
 
 [node name="ArcadeMachine" parent="ArcadeMachine2" groups=["Arcade Machines"] instance=ExtResource("3_24fbm")]
 texture_filter = 1
@@ -78,7 +78,7 @@ texture_filter = 1
 [node name="AudioStreamPlayer2D" parent="ArcadeMachine2/ArcadeMachine" instance=ExtResource("5_8hgfh")]
 
 [node name="ComingSoonMachine" parent="." instance=ExtResource("6_sktuj")]
-position = Vector2(505, 613)
+position = Vector2(492, 864)
 
 [node name="ArcadeMachine" parent="ComingSoonMachine" groups=["Arcade Machines"] instance=ExtResource("3_24fbm")]
 texture_filter = 1
@@ -90,7 +90,7 @@ pitch_scale = 0.66
 [node name="Player" parent="." instance=ExtResource("2_me10n")]
 z_index = 1
 texture_filter = 1
-position = Vector2(104, 639)
+position = Vector2(89, 791)
 scale = Vector2(0.75, 0.75)
 
 [node name="InvisibleWalls" type="StaticBody2D" parent="."]
@@ -115,7 +115,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 581.3636
 offset_bottom = 323.1818
-scale = Vector2(2.2, 2.2)
+scale = Vector2(2.2, 3.1200001)
 texture = ExtResource("7_0ukt7")
 expand_mode = 1
 stretch_mode = 1
@@ -123,9 +123,9 @@ stretch_mode = 1
 [node name="TextureRect2" type="Sprite2D" parent="background"]
 modulate = Color(0.40760016, 0.40760016, 0.40760016, 0.39607844)
 z_index = -100
-position = Vector2(642.75867, 342.54797)
+position = Vector2(619, 565)
 rotation = 1.5707964
-scale = Vector2(0.5323739, 1.7819897)
+scale = Vector2(0.8923739, 2.5271854)
 texture = SubResource("GradientTexture2D_m2wjg")
 
 [node name="pixelianhead" type="Sprite2D" parent="background"]
@@ -170,7 +170,7 @@ autoplay = true
 
 [node name="LeftTouch" type="TouchScreenButton" parent="."]
 position = Vector2(79, 394)
-scale = Vector2(2, 2)
+scale = Vector2(2, 3.7599993)
 shape = SubResource("RectangleShape2D_fgq0x")
 action = "Left"
 
@@ -186,7 +186,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RightTouch" type="TouchScreenButton" parent="."]
 position = Vector2(1196, 394)
-scale = Vector2(2, 2)
+scale = Vector2(2, 3.8)
 shape = SubResource("RectangleShape2D_fgq0x")
 action = "Right"
 
@@ -201,7 +201,7 @@ text = ">"
 metadata/_edit_use_anchors_ = true
 
 [node name="EnterGame" type="TouchScreenButton" parent="."]
-position = Vector2(296, 394)
+position = Vector2(283, 647)
 scale = Vector2(2.3599987, 2.3599987)
 shape = SubResource("CircleShape2D_1l4im")
 action = "Up"

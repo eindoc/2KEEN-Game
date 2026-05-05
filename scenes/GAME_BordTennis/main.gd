@@ -3,6 +3,10 @@ extends Node2D
 @onready var score_label = $Hud/Score
 @onready var highest_label = $Hud/HighScore
 @onready var lives_label = $Hud/Lives
+
+@onready var lives_container = $Hud/LivesIcons
+var life_icon = preload("res://img/Sprite-0001.png")
+
 #@onready var brickObjects = $Bricks
 #@onready var extraball = $BallsXtra
 
@@ -53,7 +57,14 @@ func lose_life():
 		$Ball.reset()
 	
 func update_lives_display():
-	lives_label.text = str("Lives: ", lives)
+	#lives_label.text = str("Lives: ", lives)
+	for child in lives_container.get_children():
+		child.queue_free()
+	for i in lives:
+		var icon = TextureRect.new()
+		icon.texture = life_icon
+		icon.custom_minimum_size = Vector2(24, 24)
+		lives_container.add_child(icon)
 	
 func game_over():
 	print(final_score_label)

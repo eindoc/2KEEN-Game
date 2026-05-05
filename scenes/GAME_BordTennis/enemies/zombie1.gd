@@ -1,23 +1,29 @@
 extends RigidBody2D
 
+var animations = ["zombiewalk1", "zombiewalk2", "zombiewalk3"]
+
 #@onready var main_score = %Main
 
 #var spin_speed : float = 0.0
 
 func _ready() -> void:
+	var random_anim = animations[randi() % animations.size()]
 	#print_tree_pretty()
 	#spin_speed = randf_range(-40.0, 40.0)
-	$AnimatedSprite2D.play()
+	$AnimatedSprite2D.play(random_anim)
 	$ZombiedeathAnimation.visible = false
 	body_entered.connect(_on_body_entered)
 	print("zombie ready, signal connected: ", body_entered.is_connected(_on_body_entered))
 
 func hit():
+	linear_velocity = Vector2.ZERO
+	freeze = true
 	print("fasdfasdfasdf")
 	$AnimatedSprite2D.visible = false
 	await get_tree().process_frame
 	$CollisionShape2D.disabled = true
 	$AudioStreamPlayer2D.play()
+
 	$ZombiedeathAnimation.visible = true
 	$ZombiedeathAnimation.play()
 	await $ZombiedeathAnimation.animation_finished

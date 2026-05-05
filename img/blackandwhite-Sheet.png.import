@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1nc6uevvjtfe"
-path="res://.godot/imported/PlayerPaddle.png-4467680d9ffbbcd2f0603fdd3838435d.ctex"
+uid="uid://bpw135nxnaumt"
+path="res://.godot/imported/blackandwhite-Sheet.png-9391b5d030bd5791b63c6e33c4c5af85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/GAME_BordTennis/PlayerPaddle.png"
-dest_files=["res://.godot/imported/PlayerPaddle.png-4467680d9ffbbcd2f0603fdd3838435d.ctex"]
+source_file="res://img/blackandwhite-Sheet.png"
+dest_files=["res://.godot/imported/blackandwhite-Sheet.png-9391b5d030bd5791b63c6e33c4c5af85.ctex"]
 
 [params]
 

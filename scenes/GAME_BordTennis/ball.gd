@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 			if collision.get_collider().has_method("hit"):
 				collider.hit()
 				main_score.add_point()
-				START_SPEED += 100
+				START_SPEED += 20
 				
 				var diff = global_position - collider.global_position
 				if abs(diff.x) > abs(diff.y):
@@ -61,7 +61,7 @@ func _physics_process(delta: float) -> void:
 
 func new_ball():
 	print("new ball spawned")
-	var speed = START_SPEED
+	START_SPEED = 100
 	var paddle = get_parent().get_node("Player")
 	var paddle_rect = paddle.get_node("ColorRect")
 	var paddle_top = paddle.position.x - (paddle_rect.size.x / 2)

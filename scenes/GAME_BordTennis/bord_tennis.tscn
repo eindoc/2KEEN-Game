@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://b55ajssothcnd"]
+[gd_scene format=3 uid="uid://b55ajssothcnd"]
 
 [ext_resource type="Script" uid="uid://qnywrq4g6u0x" path="res://scenes/GAME_BordTennis/bord_tennis.gd" id="1_byv5v"]
 [ext_resource type="Script" uid="uid://1y274dalxcrj" path="res://scenes/GAME_BordTennis/main.gd" id="2_t2iqu"]
@@ -11,9 +11,8 @@
 [ext_resource type="Script" uid="uid://bx3604wd1giwc" path="res://scenes/GAME_BordTennis/hud.gd" id="6_byv5v"]
 [ext_resource type="Texture2D" uid="uid://bfah6vk5exlg7" path="res://img/spikeball-Sheet.png" id="6_r52op"]
 [ext_resource type="FontFile" uid="uid://dtrm8nropfmb2" path="res://scenes/GAME_BordTennis/HomeVideo.ttf" id="7_byv5v"]
-[ext_resource type="FontFile" uid="uid://pady3731duo6" path="res://fonts/GlowtonePersonalUseRegular-6R14D.otf" id="9_wtrd1"]
-[ext_resource type="Texture2D" uid="uid://c3de8o1xvl2ct" path="res://img/Dungeon_brick_wall_grey.png.png" id="13_gqgkg"]
-[ext_resource type="Texture2D" uid="uid://3oxnhkd7svm4" path="res://scenes/GAME_BordTennis/placeholderbg.png" id="14_nginu"]
+[ext_resource type="FontFile" uid="uid://bgx4o88h2m3fl" path="res://scenes/GAME_BordTennis/HomeVideoBold.ttf" id="13_m4hnl"]
+[ext_resource type="Texture2D" uid="uid://cb0p4t73aiqlv" path="res://img/streetbackground.png" id="14_m4hnl"]
 [ext_resource type="AudioStream" uid="uid://y5twcqji7ioe" path="res://sound/Gore_mushy.wav" id="15_fkief"]
 [ext_resource type="AudioStream" uid="uid://dfr6sinnbpb6m" path="res://sound/Return Of The Living Dead Theme.mp3" id="15_m4hnl"]
 
@@ -228,10 +227,7 @@ animations = [{
 radius = 16.14594
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t2iqu"]
-size = Vector2(20, 20.060818)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_byv5v"]
-size = Vector2(14.9525, 60.714027)
+size = Vector2(20, 19.51709)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv7is"]
 
@@ -252,63 +248,14 @@ func _process(delta: float) -> void:
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jnwfq"]
-atlas = ExtResource("14_nginu")
-region = Rect2(0, 0, 840, 650)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7mdy2"]
-atlas = ExtResource("14_nginu")
-region = Rect2(840, 0, 840, 650)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_afi46"]
-atlas = ExtResource("14_nginu")
-region = Rect2(1680, 0, 840, 650)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wx7y7"]
-atlas = ExtResource("14_nginu")
-region = Rect2(2520, 0, 840, 650)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1kjr4"]
-atlas = ExtResource("14_nginu")
-region = Rect2(3360, 0, 840, 650)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g7i6f"]
-atlas = ExtResource("14_nginu")
-region = Rect2(4200, 0, 840, 650)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q20wb"]
-atlas = ExtResource("14_nginu")
-region = Rect2(5040, 0, 840, 650)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yb1b7"]
-atlas = ExtResource("14_nginu")
-region = Rect2(5880, 0, 840, 650)
+atlas = ExtResource("14_m4hnl")
+region = Rect2(0, 0, 160, 120)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gqgkg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jnwfq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7mdy2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_afi46")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wx7y7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1kjr4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g7i6f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q20wb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yb1b7")
 }],
 "loop": true,
 "name": &"default",
@@ -323,24 +270,24 @@ radius = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r52op"]
 
-[node name="BordTennis" type="Node2D"]
+[node name="BordTennis" type="Node2D" unique_id=2103100392]
 script = ExtResource("1_byv5v")
 
-[node name="Main" type="Node2D" parent="."]
+[node name="Main" type="Node2D" parent="." unique_id=2050531637]
 unique_name_in_owner = true
 texture_filter = 1
 position = Vector2(640, 360)
 scale = Vector2(1.8000023, 0.55999875)
 script = ExtResource("2_t2iqu")
 
-[node name="Player" type="CharacterBody2D" parent="Main" groups=["player"]]
+[node name="Player" type="CharacterBody2D" parent="Main" unique_id=1302423002 groups=["player"]]
 position = Vector2(-174.99979, -1203.5741)
 scale = Vector2(0.49570695, 1.985204)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("3_s0moa")
 
-[node name="Paddlebounce" type="AnimatedSprite2D" parent="Main/Player"]
+[node name="Paddlebounce" type="AnimatedSprite2D" parent="Main/Player" unique_id=1551996521]
 unique_name_in_owner = true
 position = Vector2(359.75513, 1012.85254)
 scale = Vector2(5.427412, 2.2334843)
@@ -349,7 +296,7 @@ animation = &"bloody"
 frame = 3
 frame_progress = 1.0
 
-[node name="ColorRect" type="ColorRect" parent="Main/Player"]
+[node name="ColorRect" type="ColorRect" parent="Main/Player" unique_id=1848182645]
 visible = false
 offset_left = 272.0
 offset_top = 987.0
@@ -358,20 +305,20 @@ offset_bottom = 1027.0
 scale = Vector2(4.39745, 0.658762)
 color = Color(0.06489055, 0.96850663, 1.1658621, 1)
 
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Main/Player"]
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="Main/Player" unique_id=1830794244]
 light_mask = 3
 visibility_layer = 3
 position = Vector2(359.1948, 1010.154)
 scale = Vector2(5.4274116, 2.2028391)
 shape = SubResource("RectangleShape2D_gqgkg")
 
-[node name="bloodychainsaw" type="AudioStreamPlayer2D" parent="Main/Player"]
+[node name="bloodychainsaw" type="AudioStreamPlayer2D" parent="Main/Player" unique_id=1910935432]
 position = Vector2(359.75516, 1012.85254)
 scale = Vector2(5.4274116, 2.2334845)
 stream = ExtResource("15_fkief")
 volume_db = 8.0
 
-[node name="Ball" type="CharacterBody2D" parent="Main"]
+[node name="Ball" type="CharacterBody2D" parent="Main" unique_id=579820048]
 light_mask = 129
 visibility_layer = 129
 z_index = 1
@@ -382,15 +329,19 @@ collision_mask = 131
 up_direction = Vector2(0.57729197, -0.81653786)
 script = ExtResource("4_iv7is")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Main/Ball"]
-position = Vector2(342.83395, 540.0358)
-scale = Vector2(5.421089, 6.464738)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Main/Ball" unique_id=1038821358]
+position = Vector2(343.19507, 543.1842)
+scale = Vector2(2.430449, 3.084442)
 sprite_frames = SubResource("SpriteFrames_j1gu1")
 animation = &"bounce"
-frame_progress = 0.61581576
 speed_scale = 0.5
 
-[node name="ColorRect" type="ColorRect" parent="Main/Ball"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main/Ball" unique_id=1237911362]
+position = Vector2(342.50064, 540.07166)
+scale = Vector2(2.852853, 3.5306296)
+shape = SubResource("CircleShape2D_r52op")
+
+[node name="ColorRect" type="ColorRect" parent="Main/Ball" unique_id=2106246484]
 visible = false
 offset_left = 328.0
 offset_top = 528.0
@@ -400,30 +351,25 @@ scale = Vector2(0.728545, 0.72)
 color = Color(0.94667506, 0.21586372, 0.22606032, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="BallHit" type="AudioStreamPlayer2D" parent="Main/Ball"]
+[node name="BallHit" type="AudioStreamPlayer2D" parent="Main/Ball" unique_id=880196885]
 scale = Vector2(3.7222137, 3.7222137)
 stream = ExtResource("5_wtrd1")
 
-[node name="HitCooldownTimer" type="Timer" parent="Main/Ball"]
+[node name="HitCooldownTimer" type="Timer" parent="Main/Ball" unique_id=763324066]
 wait_time = 0.2
 one_shot = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Main/Ball"]
-position = Vector2(342.50064, 540.0716)
-scale = Vector2(5.019517, 6.212046)
-shape = SubResource("CircleShape2D_r52op")
-
-[node name="Borders" type="StaticBody2D" parent="Main"]
+[node name="Borders" type="StaticBody2D" parent="Main" unique_id=902939138]
 script = ExtResource("5_8lv80")
 
-[node name="Left" type="CollisionShape2D" parent="Main/Borders"]
+[node name="Left" type="CollisionShape2D" parent="Main/Borders" unique_id=1958886162]
 light_mask = 3
 visibility_layer = 3
-position = Vector2(-256, 76.786)
-scale = Vector2(0.8841262, 110.891045)
+position = Vector2(-258.2222, 275.00073)
+scale = Vector2(0.8841262, 80.890976)
 shape = SubResource("RectangleShape2D_t2iqu")
 
-[node name="ColorRect" type="ColorRect" parent="Main/Borders/Left"]
+[node name="ColorRect" type="ColorRect" parent="Main/Borders/Left" unique_id=2115501458]
 visible = false
 offset_left = -9.1505
 offset_top = -10.1264
@@ -432,13 +378,13 @@ offset_bottom = 29.8736
 scale = Vector2(0.486498, 0.486419)
 metadata/_edit_use_anchors_ = true
 
-[node name="Right" type="CollisionShape2D" parent="Main/Borders"]
-position = Vector2(256, 80.357)
-scale = Vector2(0.8841262, 110.891045)
+[node name="Right" type="CollisionShape2D" parent="Main/Borders" unique_id=907200657]
+position = Vector2(254.44412, 287.5008)
+scale = Vector2(0.8841262, 85.319565)
 shape = SubResource("RectangleShape2D_t2iqu")
 debug_color = Color(0, 0.631373, 0.466667, 0.737255)
 
-[node name="ColorRect" type="ColorRect" parent="Main/Borders/Right"]
+[node name="ColorRect" type="ColorRect" parent="Main/Borders/Right" unique_id=710730099]
 visible = false
 offset_left = -9.1505
 offset_top = -10.1264
@@ -447,13 +393,13 @@ offset_bottom = 29.8736
 scale = Vector2(0.486498, 0.486419)
 metadata/_edit_use_anchors_ = true
 
-[node name="Top" type="CollisionShape2D" parent="Main/Borders"]
-position = Vector2(-3.9532166, -501.78677)
+[node name="Top" type="CollisionShape2D" parent="Main/Borders" unique_id=1422404394]
+position = Vector2(-9.4444275, -501.78674)
 rotation = 1.5708
-scale = Vector2(1.3464115, 38.6538)
+scale = Vector2(1.3464115, 35.29665)
 shape = SubResource("RectangleShape2D_t2iqu")
 
-[node name="ColorRect" type="ColorRect" parent="Main/Borders/Top"]
+[node name="ColorRect" type="ColorRect" parent="Main/Borders/Top" unique_id=437900072]
 offset_left = -9.1505
 offset_top = -10.1264
 offset_right = 30.8495
@@ -461,74 +407,78 @@ offset_bottom = 29.8736
 scale = Vector2(0.486498, 0.486419)
 metadata/_edit_use_anchors_ = true
 
-[node name="PlayerBumperRight" type="CollisionShape2D" parent="Main/Borders"]
-position = Vector2(364.99954, 453.57245)
-scale = Vector2(1.94711, 5.20566)
-shape = SubResource("RectangleShape2D_byv5v")
-
-[node name="PlayerBumperLeft" type="CollisionShape2D" parent="Main/Borders"]
-position = Vector2(-364.444, 446.42957)
-scale = Vector2(1.94711, 5.20566)
-shape = SubResource("RectangleShape2D_byv5v")
-
-[node name="Deathzone" type="Area2D" parent="Main"]
+[node name="Deathzone" type="Area2D" parent="Main" unique_id=812738233]
 position = Vector2(1.1111096, 351.7865)
 scale = Vector2(1, 1.1428574)
 collision_layer = 128
 collision_mask = 128
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Main/Deathzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main/Deathzone" unique_id=676555583]
 position = Vector2(0, 842.18915)
 scale = Vector2(33.64, 1)
 shape = SubResource("RectangleShape2D_iv7is")
 
-[node name="Hud" type="CanvasLayer" parent="Main"]
+[node name="Hud" type="CanvasLayer" parent="Main" unique_id=1603205636]
 script = ExtResource("6_byv5v")
 
-[node name="Score" type="Label" parent="Main/Hud"]
+[node name="Score" type="Label" parent="Main/Hud" unique_id=1273562790]
 unique_name_in_owner = true
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -42.0
-offset_top = 13.0
-offset_right = 1.0
-offset_bottom = 78.0
+offset_left = -21.0
+offset_top = 5.0
+offset_right = 22.0
+offset_bottom = 70.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
-theme_override_fonts/font = ExtResource("7_byv5v")
-theme_override_font_sizes/font_size = 71
+theme_override_fonts/font = ExtResource("13_m4hnl")
+theme_override_font_sizes/font_size = 56
 text = "0"
 script = SubResource("GDScript_wtrd1")
 
-[node name="HighScore" type="Label" parent="Main/Hud"]
+[node name="HighScore" type="Label" parent="Main/Hud" unique_id=1556891072]
 unique_name_in_owner = true
 z_as_relative = false
-offset_left = 23.0
-offset_top = 18.0
-offset_right = 195.0
-offset_bottom = 155.0
-theme_override_colors/font_color = Color(1, 1, 1, 0.43137255)
-theme_override_fonts/font = ExtResource("9_wtrd1")
-theme_override_font_sizes/font_size = 60
+offset_left = 18.0
+offset_top = 20.0
+offset_right = 190.0
+offset_bottom = 157.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_byv5v")
+theme_override_font_sizes/font_size = 28
 
-[node name="ColorRect" type="ColorRect" parent="Main/Hud"]
+[node name="ColorRect" type="ColorRect" parent="Main/Hud" unique_id=279191138]
 z_index = -4
-offset_left = -76.0
-offset_top = -14.0
-offset_right = 1384.0
-offset_bottom = 87.0
+offset_right = 1280.0
+offset_bottom = 60.0
 color = Color(0, 0, 0, 1)
 
-[node name="Lives" type="Label" parent="Main/Hud"]
-offset_left = 1078.0
-offset_top = 12.0
-offset_right = 1135.0
-offset_bottom = 35.0
+[node name="Lives" type="Label" parent="Main/Hud" unique_id=1705061985]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -163.0
+offset_right = -106.0
+offset_bottom = 23.0
+grow_horizontal = 0
 scale = Vector2(2.7200003, 2.7200003)
 text = "Lives: 3"
 
-[node name="background" type="ColorRect" parent="Main"]
+[node name="LivesIcons" type="HBoxContainer" parent="Main/Hud" unique_id=175833621]
+layout_direction = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -629.0
+offset_top = 7.0
+offset_right = -605.0
+offset_bottom = 31.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+
+[node name="background" type="ColorRect" parent="Main" unique_id=17999488]
 z_index = -200
 offset_left = -167.77759
 offset_top = -417.85806
@@ -536,31 +486,30 @@ offset_right = 618.22144
 offset_bottom = 990.4579
 color = Color(0.27911195, 0.26616436, 0.26357484, 1)
 
-[node name="Sprite2D2" type="Sprite2D" parent="Main/background"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Main/background" unique_id=1112341450]
 visible = false
-position = Vector2(223.88853, 800.0018)
-scale = Vector2(0.7332911, 2.3006043)
-skew = -0.2268928
-texture = ExtResource("13_gqgkg")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Main/background"]
 position = Vector2(166.11092, 747.3235)
-scale = Vector2(0.8690465, 2.5082464)
 sprite_frames = SubResource("SpriteFrames_gqgkg")
 autoplay = "default"
 frame_progress = 0.86719024
 
-[node name="BrickTimer" type="Timer" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="Main/background" unique_id=285203925]
+position = Vector2(166.11096, 661.60864)
+scale = Vector2(4.6736045, 13.794673)
+texture = ExtResource("14_m4hnl")
+
+[node name="BrickTimer" type="Timer" parent="." unique_id=858875089]
 wait_time = 8.0
 autostart = true
 
-[node name="LeftTouch" type="TouchScreenButton" parent="."]
+[node name="LeftTouch" type="TouchScreenButton" parent="." unique_id=1151033989]
+visible = false
 position = Vector2(101, 416)
-scale = Vector2(2, 2)
+scale = Vector2(2, 4.04)
 shape = SubResource("RectangleShape2D_6hhbj")
 action = "Left"
 
-[node name="L" type="Label" parent="LeftTouch"]
+[node name="L" type="Label" parent="LeftTouch" unique_id=1401229379]
 offset_left = -37.0
 offset_top = 106.0
 offset_right = 9.0
@@ -570,13 +519,14 @@ theme_override_font_sizes/font_size = 32
 text = "<"
 metadata/_edit_use_anchors_ = true
 
-[node name="RightTouch" type="TouchScreenButton" parent="."]
+[node name="RightTouch" type="TouchScreenButton" parent="." unique_id=1579492154]
+visible = false
 position = Vector2(1181, 416)
-scale = Vector2(2, 2)
+scale = Vector2(2, 4.04)
 shape = SubResource("RectangleShape2D_6hhbj")
 action = "Right"
 
-[node name="R" type="Label" parent="RightTouch"]
+[node name="R" type="Label" parent="RightTouch" unique_id=650368419]
 offset_left = 21.5
 offset_top = 106.0
 offset_right = 67.5
@@ -586,13 +536,14 @@ theme_override_font_sizes/font_size = 32
 text = ">"
 metadata/_edit_use_anchors_ = true
 
-[node name="EnterExitTouch" type="TouchScreenButton" parent="."]
+[node name="EnterExitTouch" type="TouchScreenButton" parent="." unique_id=1039619082]
+visible = false
 position = Vector2(617, 53)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_6hhbj")
 action = "ui_cancel"
 
-[node name="GameOverPanel" type="PanelContainer" parent="."]
+[node name="GameOverPanel" type="PanelContainer" parent="." unique_id=1514016036]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -606,52 +557,53 @@ offset_bottom = 579.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="GameOverPanel"]
+[node name="ColorRect" type="ColorRect" parent="GameOverPanel" unique_id=1522806030]
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GameOverPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverPanel" unique_id=1696852910]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="Title" type="Label" parent="GameOverPanel/VBoxContainer"]
+[node name="Title" type="Label" parent="GameOverPanel/VBoxContainer" unique_id=1512914702]
 layout_mode = 2
 text = "GAME OVER"
 
-[node name="FinalScore" type="Label" parent="GameOverPanel/VBoxContainer"]
+[node name="FinalScore" type="Label" parent="GameOverPanel/VBoxContainer" unique_id=1493970037]
 layout_mode = 2
 
-[node name="HighScore" type="Label" parent="GameOverPanel/VBoxContainer"]
+[node name="HighScore" type="Label" parent="GameOverPanel/VBoxContainer" unique_id=1641168126]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 
-[node name="PlayAgain" type="Button" parent="GameOverPanel/VBoxContainer"]
+[node name="PlayAgain" type="Button" parent="GameOverPanel/VBoxContainer" unique_id=724648947]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "PLAY AGAIN?"
 
-[node name="ReturnToArcade" type="Button" parent="GameOverPanel/VBoxContainer"]
+[node name="ReturnToArcade" type="Button" parent="GameOverPanel/VBoxContainer" unique_id=2077227987]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "RETURN TO ARCADE"
 
-[node name="PlayAgainTouch" type="TouchScreenButton" parent="GameOverPanel"]
+[node name="PlayAgainTouch" type="TouchScreenButton" parent="GameOverPanel" unique_id=2004782178]
 position = Vector2(233, 208)
 scale = Vector2(24, 3.520005)
 shape = SubResource("RectangleShape2D_r52op")
 
-[node name="PlayAgainTouch2" type="TouchScreenButton" parent="GameOverPanel"]
+[node name="PlayAgainTouch2" type="TouchScreenButton" parent="GameOverPanel" unique_id=1733592944]
 position = Vector2(235, 307)
 scale = Vector2(23.900524, 3.5504375)
 shape = SubResource("RectangleShape2D_r52op")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=69117310]
+visible = false
 position = Vector2(637, 492)
 
-[node name="maintheme" type="AudioStreamPlayer2D" parent="."]
+[node name="maintheme" type="AudioStreamPlayer2D" parent="." unique_id=1969495110]
 stream = ExtResource("15_m4hnl")
-volume_db = -2.0
+volume_db = -4.0
 autoplay = true
 
 [connection signal="animation_finished" from="Main/Player/Paddlebounce" to="Main/Ball" method="_on_paddlebounce_animation_finished"]
