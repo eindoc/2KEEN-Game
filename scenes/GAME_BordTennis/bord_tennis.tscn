@@ -499,7 +499,7 @@ scale = Vector2(4.6736045, 13.794673)
 texture = ExtResource("14_m4hnl")
 
 [node name="BrickTimer" type="Timer" parent="." unique_id=858875089]
-wait_time = 8.0
+wait_time = 3.0
 autostart = true
 
 [node name="LeftTouch" type="TouchScreenButton" parent="." unique_id=1151033989]

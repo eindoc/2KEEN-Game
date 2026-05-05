@@ -3,8 +3,8 @@ extends Node2D
 @onready var ball = preload("res://scenes/GAME_BordTennis/ball.gd")
 @onready var brickObject = preload("res://scenes/GAME_BordTennis/enemies/zombie1.tscn")
 
-var columns = 16
-var rows = 2
+var columns = 8
+var rows = 1
 var margin = 25
 
 func _ready() -> void:
