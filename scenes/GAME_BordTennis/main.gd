@@ -16,10 +16,12 @@ var life_icon = preload("res://img/Sprite-0001.png")
 
 var current_score = 0
 var lives = 3
+var gameOver = false
 
 signal score_changed(score)
 
 func _ready():
+	gameOver = false
 	#print(get_parent().get_node_or_null("GameOverPanel"))
 	#print(get_node_or_null("../GameOverPanel"))
 	#print(get_node_or_null("../GameOverPanel/VBoxContainer/FinalScore"))
@@ -30,10 +32,13 @@ func _ready():
 	
 	
 func add_point():
-	print("point")
-	current_score += 1
-	score_label.text = str(current_score)
-	emit_signal("score_changed")
+	if gameOver:
+		pass
+	elif !gameOver:
+		print("point")
+		current_score += 1
+		score_label.text = str(current_score)
+		emit_signal("score_changed")
 	
 	#$Ball.increase_speed_by(50)
 	#if current_score % 8 == 0:
@@ -75,11 +80,13 @@ func game_over():
 	game_over_high_score_label.text = str("High Score: ", SaveLoad.highest_record)
 	GlobalScores.update_high_score(current_score)
 	game_over_panel.visible = true
+	gameOver = true
 	
 func _on_play_again_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/GAME_BordTennis/bord_tennis.tscn")
 
 func _on_return_to_arcade_pressed() -> void:
+	MusicManager.music_player.stop()
 	get_tree().change_scene_to_file("res://scenes/arcade.tscn")
 	
 func _input(event):
@@ -87,3 +94,6 @@ func _input(event):
 		if event.is_pressed() and not event.is_echo():
 			BordTennisGlobal.demo_mode = false
 			get_tree().change_scene_to_file("res://scenes/GAME_BordTennis/control.tscn")
+	
+	#if event.is_action_pressed("Jump"):
+		#MusicManager.music_player.stop()

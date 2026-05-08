@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-var speed = 1000
+var speed = 400
 var base_speed = 0
 var is_slowed = false
-var friction = 3000
+var friction = 2000
 #var acceleration = 8000
 
 var min_x : float
@@ -14,7 +14,7 @@ func _ready():
 	base_speed = speed
 	#var left_wall: Node2D = get_tree().get_first_node_in_group("left_wall")
 	#var right_wall: Node2D = get_tree().get_first_node_in_group("right_wall")
-	$Paddlebounce.play("moving")
+	$Paddlebounce.play("idle")
 	
 func slowdown():
 	print("slowdown called, is_slowed: ", is_slowed)
@@ -41,12 +41,22 @@ func _physics_process(_delta: float) -> void:
 				direction = -1.0
 			elif ball.global_position.x > global_position.x + 10:
 				direction = 1.0
+				
 	else:
 		direction = Input.get_axis("Left", "Right")
 	if direction:
 		velocity.x = direction * speed
+		$Paddlebounce/Character.play("running right")
+		$Paddlebounce/Character.flip_h = direction < 0
 	else:
-		velocity.x = move_toward(velocity.y, 0, speed)
+		velocity.x = move_toward(velocity.x, 0, friction * _delta)
+		$Paddlebounce/Character.play("idle")
+	#else:
+		#direction = Input.get_axis("Left", "Right")
+	#if direction:
+		#velocity.x = direction * speed
+	#else:
+		#velocity.x = move_toward(velocity.y, 0, speed)
 		
 	#FOR ACCELERATION OR DECELERATION ON PLAYER PADDLE
 	#if direction:

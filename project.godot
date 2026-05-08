@@ -17,9 +17,15 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="2KEEN Game"
 run/main_scene="uid://baf4lmiv4yt27"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-boot_splash/bg_color=Color(0.61005944, 0.1560109, 0.25330698, 1)
+boot_splash/bg_color=Color(0.5039172, 0.27600977, 0.29069182, 1)
+boot_splash/stretch_mode=5
+boot_splash/image="uid://bh8yva2hynqqc"
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=1000
+
+[audio]
+
+buses/default_bus_layout="uid://c8ayr6j8xxvex"
 
 [autoload]
 
@@ -28,6 +34,7 @@ SaveLoad="*res://save_load.gd"
 GlobalScores="*res://global_scores.gd"
 PlonkoScore="*res://scenes/GAME_Plonko/plonkoscore.gd"
 BordTennisGlobal="*res://BordTennisGlobal.gd"
+MusicManager="*uid://7ceplt0cajvb"
 
 [display]
 

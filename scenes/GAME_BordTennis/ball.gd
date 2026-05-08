@@ -3,6 +3,10 @@ extends CharacterBody2D
 @onready var main_score = %Main
 @onready var player = preload("res://player.gd")
 
+@onready var crowd_effect = $"screams"
+@onready var crowd_effect2 = $"splooshes"
+
+
 var win_size : Vector2
 var START_SPEED = 100
 var dir : Vector2
@@ -66,7 +70,7 @@ func new_ball():
 	var paddle_rect = paddle.get_node("ColorRect")
 	var paddle_top = paddle.position.x - (paddle_rect.size.x / 2)
 	var ball_y = paddle_top - 150
-	var ball_x = paddle.position.x
+	var ball_x = paddle.position.x / 2
 	position = Vector2(ball_x, ball_y)
 	velocity = random_direction() * START_SPEED
 
@@ -88,7 +92,9 @@ func _on_deathzone_body_entered(body: Node2D) -> void:
 	if not is_active:
 		return
 	is_active = false
-	main_score.lose_life()   # tell main to handle lives; main calls reset() if lives remain
+	main_score.lose_life()
+	$splooshes.play()
+	crowd_effect.play_crowd()
 
 
 func increase_speed_by(amount: float):

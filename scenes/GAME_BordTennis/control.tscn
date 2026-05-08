@@ -1,15 +1,175 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvy6ewrbhc1ye"]
+[gd_scene format=3 uid="uid://cvy6ewrbhc1ye"]
 
 [ext_resource type="Script" uid="uid://cycbdf6n81lgu" path="res://scenes/GAME_BordTennis/start_screen.gd" id="1_bp52l"]
+[ext_resource type="Texture2D" uid="uid://bvmpveanoohmy" path="res://img/titlescreen-Sheet.png" id="2_ts2pk"]
+[ext_resource type="FontFile" uid="uid://dtrm8nropfmb2" path="res://scenes/GAME_BordTennis/HomeVideo.ttf" id="3_dmt5i"]
 
-[node name="StartScreen" type="Control"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8467f"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(160, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65p4o"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(320, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wakma"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(480, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmoex"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(640, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl72b"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(800, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_016ye"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(960, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14dhy"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(1120, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7e0o"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(1280, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2q3dt"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(1440, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_753lm"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(1600, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1txb"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(1760, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi7tn"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(1920, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7j7hb"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(2080, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6w8b6"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(2240, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5o30"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(2400, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fpp3"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(2560, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yk17"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(2720, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onvqc"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(2880, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g3a0"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(3040, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5juy"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(3200, 0, 160, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7s5g7"]
+atlas = ExtResource("2_ts2pk")
+region = Rect2(3360, 0, 160, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dmt5i"]
+animations = [{
+"frames": [{
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_8467f")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_65p4o")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_wakma")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_tmoex")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_nl72b")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_016ye")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_14dhy")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_c7e0o")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_2q3dt")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_753lm")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_r1txb")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_fi7tn")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_7j7hb")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_6w8b6")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_u5o30")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_0fpp3")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_3yk17")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_onvqc")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_0g3a0")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_b5juy")
+}, {
+"duration": 20.0,
+"texture": SubResource("AtlasTexture_7s5g7")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sj7f6"]
+
+[node name="StartScreen" type="Control" unique_id=310202098]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_bp52l")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=946283677]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,35 +182,59 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2112463367]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 300.0
-offset_top = 249.0
-offset_right = 881.0
-offset_bottom = 402.0
+offset_left = 668.0
+offset_top = -124.0
+offset_right = 1249.0
+offset_bottom = 196.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
-alignment = 1
+alignment = 2
 
-[node name="Title" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "BORD TENNIS"
-
-[node name="HighScore" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="PressStart" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 48
-text = "PRESS ANY KEY TO START"
-
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=2062017252]
+wait_time = 3.0
 one_shot = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=454562487]
+z_index = -1
+texture_filter = 1
+position = Vector2(639.00006, 480.00003)
+scale = Vector2(7.9875, 8)
+sprite_frames = SubResource("SpriteFrames_dmt5i")
+autoplay = "default"
+
+[node name="HighScore" type="Label" parent="." unique_id=458146964]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 589.0
+offset_bottom = 31.0
+
+[node name="PressStart" type="Label" parent="." unique_id=469879283]
+layout_mode = 0
+offset_left = 688.0
+offset_top = 8.0
+offset_right = 1269.0
+offset_bottom = 193.0
+theme_override_fonts/font = ExtResource("3_dmt5i")
+theme_override_font_sizes/font_size = 48
+text = "PRESS SPACE KEY
+OR
+TAP HERE
+TO START"
+horizontal_alignment = 2
+
+[node name="EnterExitTouch" type="TouchScreenButton" parent="." unique_id=858702063]
+position = Vector2(1104, 152.00002)
+scale = Vector2(17.749474, 4.9709616)
+shape = SubResource("RectangleShape2D_sj7f6")
+action = "Jump"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
