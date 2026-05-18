@@ -16,3 +16,5 @@ This is an arcade app I decided to make because I couldn't decide between a few 
 - May 2: Cosmetic changes and some tinkering with gameplay. I'm still not decided on whether or not to have acceleration and decceleration to simulate a weighted paddle.
 
 - May 4: Lots more cosmetic changes and tinkering. Think I'm gonna skip the acceleration. Various zombie animations and a new death animation. Plus slightly altered play field.
+
+- May 18: Calling it good on Bord Tennis. Moving on to games 2 and 3 for the arcade!
