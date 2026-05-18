@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://fvfi45txy2fr"
+path="res://.godot/imported/Hit damage 1.wav-bbd2304cf7acdfd32d3d83cd676f52d6.sample"
+
+[deps]
+
+source_file="res://Games/GAME_BordTennis/sounds/Hit damage 1.wav"
+dest_files=["res://.godot/imported/Hit damage 1.wav-bbd2304cf7acdfd32d3d83cd676f52d6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

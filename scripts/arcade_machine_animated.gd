@@ -37,4 +37,4 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _physics_process(delta: float) -> void:
 		if player_inside and Input.is_action_just_pressed("Up"):
-			get_tree().change_scene_to_file("res://scenes/GAME_BordTennis/control.tscn")
+			get_tree().change_scene_to_file("res://Games/GAME_BordTennis/scenes/control.tscn")
